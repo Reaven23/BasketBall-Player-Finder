@@ -12,4 +12,7 @@ class GamesController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def leaderboard
+  end
 end
