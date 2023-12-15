@@ -6,6 +6,7 @@ class CreatePlayers < ActiveRecord::Migration[7.0]
       t.string :birth_year
       t.integer :points_record
       t.float :point_average
+      t.string :level
       t.string :photo
 
       t.timestamps

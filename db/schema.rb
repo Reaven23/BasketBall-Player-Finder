@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_13_133023) do
     t.string "birth_year"
     t.integer "points_record"
     t.float "point_average"
+    t.string "level"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
