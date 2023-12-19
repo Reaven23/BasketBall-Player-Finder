@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :players, only: ['new', 'create', 'index']
-  resources :games, only: ['new', 'create', 'show'] do
+
+  get 'start_game', to: 'games#start_game'
+
+  resources :games, only: ['show'] do
     member do
       get :leaderboard, as: :leaderboard
     end
   end
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :players, only: ['new', 'create', 'index']
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Other routes go here if you have any
+
 end

@@ -4,9 +4,11 @@
 <div class="button-classic">Add your own player</div>
 <% end %>
 
-
-<%= link_to new_game_path, class: 'btn btn_primary' do %>
-  <div class="game">
-    <h2>Start a game</h2>
+<div class="container-home">
+  <div id="home" class="flex-column flex-center">
+    <h1>Basketball Players Knowledge Test</h1>
+    <%= link_to start_game_path, method: :post, class: 'btn-home' do %>
+      <h2>Play</h2>
+    <% end %>
   </div>
-<% end %>
+</div>
