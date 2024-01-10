@@ -1,0 +1,12 @@
+<h1>Update Player information</h1>
+
+<%= simple_form_for @player do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :birth_year %>
+  <%= f.input :points_record %>
+  <%= f.input :level, label: 'Level', as: :select, collection: ["Easy", 'Medium', 'Hard', 'Hard Core', "God Mode"], prompt: 'Select a level' %>
+  <%= f.input :category, label: 'Position', as: :select, collection: ["Point Guard", 'Shooting Forward', 'Small Forward', 'Power Forward', "Center"], prompt: 'Select a position' %>
+  <%= f.input :photo %>
+  <%= f.button :submit %>
+<% end %>

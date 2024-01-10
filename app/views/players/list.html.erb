@@ -1,0 +1,9 @@
+<h1>Here is a list of all the players</h1>
+
+<% @players.each do |player| %>
+  <%= link_to edit_player_path(player) do %>
+  <div class="player-list">
+    <h3>Name : <%= player.first_name %> <%= player.last_name %></h3>
+  </div>
+  <% end %>
+<% end %>

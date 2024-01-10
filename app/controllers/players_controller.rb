@@ -5,6 +5,10 @@ class PlayersController < ApplicationController
     render json: @players
   end
 
+  def list
+    @players = Player.all
+  end
+
   def show
     @player = Player.find(params[:id])
     render json: @player
@@ -21,6 +25,10 @@ class PlayersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @player = Player.find(params[:id])
   end
 
   private
