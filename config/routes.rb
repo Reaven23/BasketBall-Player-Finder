@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :players, only: ['new', 'create', 'index', 'edit', 'update']
+  resources :players, only: ['new', 'create', 'index', 'edit', 'update', 'show']
   get 'list', to: 'players#list'
 
   # Other routes go here if you have any
