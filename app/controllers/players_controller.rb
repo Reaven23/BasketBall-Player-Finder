@@ -9,6 +9,11 @@ class PlayersController < ApplicationController
     @players = Player.all
   end
 
+  def game_of_ten_easy
+    @ten_random_easy_players = Player.where(level: 'easy').sample(10)
+    render json: @ten_random_easy_players
+  end
+
   def show
     @player = Player.find(params[:id])
     render json: @player
@@ -21,6 +26,7 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     if @player.save!
+      flash[:notice] = "Le joueur a été créé avec succès !"
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
@@ -34,6 +40,7 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     if @player.update(player_params)
+      flash[:notice] = "Le joueur a été modifié avec succès !"
       redirect_to root_path
     else
       render :edit, status: :unprocessable_entity

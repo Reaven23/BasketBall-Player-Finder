@@ -1,18 +1,38 @@
-<h1>Blind test for ballers</h1>
+<div class='title'>Blind test for ballers</div>
 
 <%= link_to new_player_path do  %>
-<div class="button-classic">Add your own player</div>
+  <div class="button-classic">Add your own player</div>
 <% end %>
 
 <%= link_to list_path do %>
-<div class="button-classic">Update a player</div>
+  <div class="button-classic">Update a player</div>
 <% end %>
 
 <div class="container-home">
   <div id="home" class="flex-column flex-center">
     <h1>Basketball Players Knowledge Test</h1>
-    <%= link_to start_game_path, method: :post, class: 'btn-home' do %>
-      <h2>Play</h2>
-    <% end %>
+    <div class="btn-home">
+      <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
+        <h2>Easy</h2>
+      <% end %>
+    </div>
+
+      <div class="btn-home">
+        <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
+          <h2>Medium</h2>
+        <% end %>
+      </div>
+
+      <div class="btn-home">
+        <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
+          <h2>Hard</h2>
+        <% end %>
+      </div>
+
+       <div class="btn-home">
+        <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
+          <h2>Legend</h2>
+        <% end %>
+       </div>
   </div>
 </div>

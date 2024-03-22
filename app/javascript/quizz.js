@@ -23,12 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
+      
       displayQuestions(data, randomNumbers);
     });
 });
 
 const displayQuestions = (data, randomNumbers) => {
   showQuestion(data[randomNumbers[currentQuestion]]);
+
 
   buttonHere.addEventListener('click', () => {
     const userAnswer = response.value.toLowerCase();
@@ -42,11 +44,11 @@ const displayQuestions = (data, randomNumbers) => {
       response.value = '';
     }
 
-    clearTimeout(timer); // Réinitialiser le timer
+    clearTimeout(timer);
     nextQuestion(data, randomNumbers);
   });
 
-  // Démarrer le timer de 20 secondes pour chaque question
+
   timer = setTimeout(() => {
     answer.innerText = '';
     nextQuestion(data, randomNumbers);
@@ -63,13 +65,13 @@ const nextQuestion = (data, randomNumbers) => {
   if (currentQuestion < randomNumbers.length) {
     showQuestion(data[randomNumbers[currentQuestion]]);
     response.value = '';
-    clearTimeout(timer); // Réinitialiser le timer pour la question suivante
+    clearTimeout(timer);
     timer = setTimeout(() => {
       answer.innerText = '';
       nextQuestion(data, randomNumbers);
     }, 20000);
   } else {
-    // Afficher le score final une fois toutes les questions posées
+
     console.log('Score final :', score);
     answer.innerText = `Score final : ${score}`;
     buttonHere.classList.add('d-none');

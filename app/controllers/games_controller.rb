@@ -3,7 +3,7 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
-  def start_game
+  def start_easy_game
     @game = Game.new
     @game.user = current_user
     @game.name = "Game n°#{Game.all.length}"

@@ -1,8 +1,102 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Player.create(
+  first_name: 'Stephen',
+  last_name: 'Curry',
+  birth_year: '1988',
+  level: 'easy',
+  points_record: 62,
+  point_average: 24.8,
+  photo: 'https://cdn.vox-cdn.com/thumbor/d-VbPgKOGrCCoFoqUwa1jtYSmq4=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/24350573/1245617942.jpg'
+)
 
+Player.create(
+  first_name: 'Kobe',
+  last_name: 'Bryant',
+  birth_year: '1978',
+  level: 'easy',
+  points_record: 81,
+  point_average: 25,
+  photo: 'https://cdn-s-www.ledauphine.com/images/83F11F9A-6D4A-4192-85C6-5468661C28A4/NW_detail/kobe-bryant-emmanuel-dunand-afp-1580073977.jpg'
+)
+
+Player.create(
+  first_name: 'Michael',
+  last_name: 'Jordan',
+  birth_year: '1963',
+  level: 'easy',
+  points_record: 69,
+  point_average: 30.1,
+  photo: 'https://www.basketsession.com/statics/uploads/2020/04/michael-jordan-bulls-rookie.jpg'
+)
+
+
+Player.create(
+  first_name: 'Victor',
+  last_name: 'Wembanyama',
+  birth_year: '2004',
+  level: 'easy',
+  points_record: 38,
+  point_average: 20.7,
+  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJlL83bahYN4lV5Rl1t35qcCcLfV8774o0fUpkC7R6QA&s'
+)
+
+Player.create(
+  first_name: 'Lebron',
+  last_name: 'James',
+  birth_year: '1984',
+  level: 'easy',
+  points_record: 61,
+  point_average: 27.1,
+  photo: 'https://img-4.linternaute.com/2LvXSzwn6ZjNkdRcTx2m792_Cx4=/1500x/smart/78273c08efdd4279b9e5a6429c0947d5/ccmcms-linternaute/41695733.jpg'
+)
+
+Player.create(
+  first_name: 'Luka',
+  last_name: 'Doncic',
+  birth_year: '1963',
+  level: 'easy',
+  points_record: 73,
+  point_average: 28.6,
+  photo: 'https://www.si.com/.image/t_share/MjA0ODgzMzIwMTg0NTE0MTQy/usatsi_22718988_168394021_lowres.jpg'
+)
+
+Player.create(
+  first_name: 'Joel',
+  last_name: 'Embiid',
+  birth_year: '1994',
+  level: 'easy',
+  points_record: 70,
+  point_average: 27.8,
+  photo: 'https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/iiard8hyncpjfemongcu'
+)
+
+Player.create(
+  first_name: 'Giannis',
+  last_name: 'Antetokounmpo',
+  birth_year: '1994',
+  level: 'easy',
+  points_record: 64,
+  point_average: 23.3,
+  photo: 'https://s.yimg.com/ny/api/res/1.2/vpCSheKwr4gVlBwVW8d5vQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2024-03/601d0c40-e47f-11ee-9fdc-928c50cbcbaa'
+)
+
+Player.create(
+  first_name: 'Nikola',
+  last_name: 'Jokic',
+  birth_year: '1995',
+  level: 'easy',
+  points_record: 50,
+  point_average: 20.8,
+  photo: 'https://prod-media.beinsports.com/image/1705928403358_e7ae22eb-d091-41a8-b4f6-2d52c040795d.jpg'
+)
+
+Player.create(
+  first_name: 'Kevin',
+  last_name: 'Durant',
+  birth_year: '1988',
+  level: 'easy',
+  points_record: 55,
+  point_average: 27.3,
+  photo: 'https://www.basketusa.com/wp-content/uploads/2024/03/kevin-durant.jpg'
+)
+
+puts "10 nba Player created"
