@@ -6,9 +6,3 @@ import "bootstrap"
 import "./quizz"
 import "./quizz_easy"
 
-document.getElementById('player-input').addEventListener('keypress', function(event) {
-  if (event.which === 13) { // Vérifie si la touche pressée est "Entrée"
-      event.preventDefault();
-      document.getElementById('myForm').submit(); 
-  }
-});
