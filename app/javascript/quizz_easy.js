@@ -9,15 +9,18 @@ const proSept = document.querySelector('.seven')
 const proHuit = document.querySelector('.eight')
 const proNeuf = document.querySelector('.nine')
 const proDix = document.querySelector('.ten')
-const playerImage = document.querySelector('.pl-img')
+const playerImage = document.getElementById('image-player')
 const playerInput = document.getElementById("player-input")
 const checked = document.querySelector('.checked')
 const crossed = document.querySelector('.crossed')
 const scorePoints = document.querySelector('.score-points')
 const easyGame = document.querySelector('.easy-game')
+const buttonHere = document.querySelector('.bout');
 
 let score = 0
 let currentQuestion = 0
+const questionNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const progressBar = [proUn, proDeux, proTrois, proQuatre, proCinq, proSix, proSept, proHuit, proNeuf, proDix]
 
 document.addEventListener('click', () => {
   const url = 'http://localhost:3000/ten_players'
@@ -25,6 +28,50 @@ document.addEventListener('click', () => {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      
+
+      console.log(data);
+      console.log(data[currentQuestion].photo);
+
+      while (currentQuestion < 10) {
+        displayQuestions(data, currentQuestion);
+      }
     })
 })
+
+const displayQuestions = (data, currentQuestion) => {
+  showPhoto(data[currentQuestion])
+
+  buttonHere.addEventListener('click', () => {
+    const userAnswer = playerInput.value.toLowerCase();
+    const correctAnswer = `${data[currentQuestion].first_name.toLowerCase()} ${data[currentQuestion].last_name.toLowerCase()}`;
+
+    if (userAnswer === correctAnswer) {
+      checked.classList.remove('visual');
+      score += 10;
+    } else {
+      response.value = '';
+    }
+
+    nextQuestion(data, currentQuestion)
+
+
+  })
+
+}
+
+const showPhoto = (player) => {
+  playerImage.src = player.photo
+}
+
+const nextQuestion = (data, currentQuestion) => {
+  currentQuestion++;
+
+  if (currentQuestion < 9) {
+    showPhoto(data[currentQuestion]);
+    playerInput.value = '';
+    scorePoints.innerText = `${score} points`
+  } else {
+    scorePoints.innerText = `Score Final : ${score} points`
+    buttonHere.classList.add('d-none')
+  }
+}
