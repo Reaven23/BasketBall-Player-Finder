@@ -1,7 +1,5 @@
-
-
 #photo-joueur {
- height: 500px;
+  height: 500px;
 }
 
 .answer-user {
@@ -11,7 +9,7 @@
 
 .page-container {
   min-height: 100vh;
-  background-image: url("mj-2");
+  background-image: url("kobe-3");
   background-size: cover;
   padding-top: 2rem;
 }
@@ -60,6 +58,7 @@
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
   margin-left: 1rem;
+  color: white
 }
 
 .game-progress {
@@ -73,7 +72,7 @@
 }
 
 .player-image {
-  height: 70%;
+  height: 60%;
   overflow: hidden;
 }
 
@@ -105,7 +104,8 @@
 }
 
 .player-input {
-  width: 60%;
+  width: 80%;
+  margin-left: 8rem;
 }
 
 input[type="text"] {
@@ -123,4 +123,34 @@ input[type="text"] {
 .question-number {
   font-size: 22px;
   font-family: fantasy;
+}
+
+
+.score-title {
+  font-size: 38px;
+  font-family: fantasy;
+}
+
+.score-points {
+  font-size: 28px
+}
+
+.visual {
+  position: absolute;
+  left: -9999px;
+  /* Déplace l'élément hors de la zone visible */
+  top: -9999px;
+
+
+
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.img-container {
+  height: 60%;
+  width: 80%;
 }

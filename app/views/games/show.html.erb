@@ -36,12 +36,21 @@
       </div>
     </div>
 
-    <div class="game-score">
-      <div class="score-title">LIVE SCORE</div>
+    <div class="game-score d-flex flex-column align-items-center justify-content-around">
+      <div class="score-title">SCORE</div>
 
-      <div class="score-visual"></div>
-      <div class="score-message"></div>
-      <div class="score-points"></div>
+      <div class="score-visual" >
+        <div class="checked  d-flex flex-column align-items-center justify-content-center" style="">
+          <div class="img-container"><img src="<%= asset_path('checked.png') %>" alt="" id="image" class=""></div>
+          <div class="score-message">C'est fort, bravo!</div>
+        </div>
+        <div class="crossed  visual d-flex flex-column align-items-center justify-content-center" style="">
+          <div class="img-container"><img src="<%= asset_path('crossed.png') %>" alt="" id="image" class=""></div>
+          <div class="score-message" >C'est nul, essaie encore!</div>
+        </div>
+      </div>
+
+      <div class="score-points">Points:</div>
     </div>
   </div>
 
