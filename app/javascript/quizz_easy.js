@@ -14,3 +14,17 @@ const playerInput = document.getElementById("player-input")
 const checked = document.querySelector('.checked')
 const crossed = document.querySelector('.crossed')
 const scorePoints = document.querySelector('.score-points')
+const easyGame = document.querySelector('.easy-game')
+
+let score = 0
+let currentQuestion = 0
+
+document.addEventListener('click', () => {
+  const url = 'http://localhost:3000/ten_players'
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      
+    })
+})
