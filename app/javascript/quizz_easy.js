@@ -26,6 +26,7 @@ const questionNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
   const easyGame = document.querySelector('.easy-game');
   console.log(easyGame);
 
@@ -37,20 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(data => {
           console.log(data);
           console.log(document);
-        console.log(document.getElementById('image'));
+          console.log(typeof document);
+          console.log(document.getElementsByTagName('img'));
+          console.log(document.querySelector(".game-container"));
 
+          const imgEl = document.getElementsByTagName('img')
+          console.log(imgEl[0]);
+          // const playerImage = imgEl[0]
+          // console.log(playerImage);
+          // playerImage.attributes.src.value = data[currentQuestion].photo
 
-          // Vérifier si les éléments ont été trouvés
-          if (imagePlayer && layer) {
-              // Faire quelque chose avec les éléments DOM trouvés
-              console.log('Image Player trouvé :', imagePlayer);
-              console.log('Layer trouvé :', layer);
-          } else {
-              console.log('Les éléments DOM n\'ont pas été trouvés.');
-          }
       });
   });
 });
+
+
+
+
 // document.addEventListener('DOMContentLoaded', () => {
 
 //   const easyGame = document.querySelector('.easy-game')

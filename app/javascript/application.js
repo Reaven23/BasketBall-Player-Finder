@@ -5,4 +5,3 @@ import "@popperjs/core"
 import "bootstrap"
 import "./quizz"
 import "./quizz_easy"
-
