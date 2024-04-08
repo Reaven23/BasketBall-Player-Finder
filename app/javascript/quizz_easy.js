@@ -27,26 +27,22 @@ const questionNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const easyGame = document.querySelector('.easy-game');
+  const easyGame = document.querySelector('.start-game');
   console.log(easyGame);
 
   easyGame.addEventListener('click', () => {
       const url = 'http://localhost:3000/ten_players';
+      easyGame.classList.add("d-none")
+
 
       fetch(url)
       .then(response => response.json())
       .then(data => {
           console.log(data);
-          console.log(document);
-          console.log(typeof document);
-          console.log(document.getElementsByTagName('img'));
-          console.log(document.querySelector(".game-container"));
-
-          const imgEl = document.getElementsByTagName('img')
-          console.log(imgEl[0]);
-          // const playerImage = imgEl[0]
-          // console.log(playerImage);
-          // playerImage.attributes.src.value = data[currentQuestion].photo
+          console.log(document.querySelector('.player-image'));
+          document.querySelector('.player-image').src = data[currentQuestion].photo
+          console.log(data[currentQuestion].photo);
+          console.log(document.querySelector('.player-image').src);
 
       });
   });
