@@ -19,42 +19,42 @@
 // // const easyGame = document.querySelector('.easy-game')
 // const buttonHere = document.querySelector('.bout')
 
-let score = 0
-let currentQuestion = 0
-const questionNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-const easyGame = document.querySelector('.easy-game');
-// const progressBar = [proUn, proDeux, proTrois, proQuatre, proCinq, proSix, proSept, proHuit, proNeuf, proDix]
+// let score = 0
+// let currentQuestion = 0
+// const questionNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+// const easyGame = document.querySelector('.easy-game');
+// // const progressBar = [proUn, proDeux, proTrois, proQuatre, proCinq, proSix, proSept, proHuit, proNeuf, proDix]
 
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 
-  console.log(easyGame);
+//   console.log(easyGame);
 
-  easyGame.addEventListener('click', () => {
-    const url = 'http://localhost:3000/ten_players';
-    easyGame.classList.add("d-none")
-    let obj = []
-
-
-      fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        if (document.readyState === 'complete') {
+//   easyGame.addEventListener('click', () => {
+//     const url = 'http://localhost:3000/ten_players';
+//     easyGame.classList.add("d-none")
+//     let obj = []
 
 
-          console.log(data);
-
-          console.log(document.querySelector('.player-image'));
-          document.getElementById('image').src = data[currentQuestion].photo
-          console.log(data[currentQuestion].photo);
-          console.log(document.querySelector('.player-image').src);
-          obj.push(data)
-        }
+//       fetch(url)
+//       .then(response => response.json())
+//       .then(data => {
+//         if (document.readyState === 'complete') {
 
 
+//           console.log(data);
 
-      });
-  });
-});
+//           console.log(document.querySelector('.player-image'));
+//           document.getElementById('image').src = data[currentQuestion].photo
+//           console.log(data[currentQuestion].photo);
+//           console.log(document.querySelector('.player-image').src);
+//           obj.push(data)
+//         }
+
+
+
+//       });
+//   });
+// });
 
 
 

@@ -47,6 +47,7 @@ class PlayersController < ApplicationController
     end
   end
 
+  
   private
 
   def player_params

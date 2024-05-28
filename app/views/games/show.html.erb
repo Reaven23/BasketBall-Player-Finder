@@ -6,10 +6,10 @@
     </div>
   </div>
 
-  <div class="game-container d-flex justify-content-center">
+  <div data-controller='game' class=" game-container d-flex justify-content-center">
     <div class="game-flow d-flex flex-column align-items-center justify-content-around">
       <div class="game-progress">
-        <div class="question-number d-flex flex-column justify-content-center">Joueur 1/10</div>
+        <div data-game-target='questionNumber' class="question-number d-flex flex-column justify-content-center">Joueur 1/10</div>
         <div class="progress-container-bar d-flex flex-column justify-content-center">
           <div class="progress-game-bar d-flex">
             <div class="one progress-background">00</div>
@@ -27,12 +27,11 @@
       </div>
 
       <div class="player-image">
-         <img id="image" class="" src="" alt="" >
+         <img data-game-target='playerImage' id="image" class="" src="" alt="" >
       </div>
 
       <div class="player-in">
-        <input type="text" id="player-input" placeholder="Entrez votre réponse">
-        <button class="bout d-none" id="check-button" style="">Vérifier</button>
+        <input data-action="keydown->game#handleKeyDown" data-game-target="playerInput" type="text" id="player-input" placeholder="Entrez votre réponse">
       </div>
     </div>
 
