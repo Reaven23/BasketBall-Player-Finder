@@ -12,16 +12,16 @@
         <div data-game-target='questionNumber' class="question-number d-flex flex-column justify-content-center">Joueur 1/10</div>
         <div class="progress-container-bar d-flex flex-column justify-content-center">
           <div class="progress-game-bar d-flex">
-            <div class="one progress-background">00</div>
-            <div class="two progress-background">00</div>
-            <div class="thee progress-background">00</div>
-            <div class="four progress-background">00</div>
-            <div class="five progress-background">00</div>
-            <div class="six progress-background">00</div>
-            <div class="seven progress-background">00</div>
-            <div class="eight progress-background">00</div>
-            <div class="nine progress-background">00</div>
-            <div class="ten progress-background">00</div>
+            <div data-game-target='one' class="one progress-background">00</div>
+            <div data-game-target='two' class="two progress-background">00</div>
+            <div data-game-target='three' class="three progress-background">00</div>
+            <div data-game-target='four' class="four progress-background">00</div>
+            <div data-game-target='five' class="five progress-background">00</div>
+            <div data-game-target='six' class="six progress-background">00</div>
+            <div data-game-target='seven' class="seven progress-background">00</div>
+            <div data-game-target='eight' class="eight progress-background">00</div>
+            <div data-game-target='nine' class="nine progress-background">00</div>
+            <div data-game-target='ten' class="ten progress-background">00</div>
           </div>
         </div>
       </div>
@@ -38,18 +38,10 @@
     <div class="game-score d-flex flex-column align-items-center justify-content-around">
       <div class="score-title">SCORE</div>
 
-      <div class="score-visual" >
-        <div class="checked  d-flex flex-column align-items-center justify-content-center" style="">
-          <div class="img-container"><img src="<%= asset_path('checked.png') %>" alt="" id="image" class=""></div>
-          <div class="score-message">C'est fort, bravo!</div>
-        </div>
-        <div class="crossed  visual d-flex flex-column align-items-center justify-content-center" style="">
-          <div class="img-container"><img src="<%= asset_path('crossed.png') %>" alt="" id="image" class=""></div>
-          <div class="score-message" >C'est nul, essaie encore!</div>
-        </div>
+      <div data-game-target='scoreVisual' class="score-visual" >
       </div>
 
-      <div class="score-points">Points:</div>
+      <div data-game-target='score' class="score-points"></div>
     </div>
 
   </div>
