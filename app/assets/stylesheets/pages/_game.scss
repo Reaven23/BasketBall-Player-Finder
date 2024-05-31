@@ -2,10 +2,6 @@
   height: 500px;
 }
 
-.answer-user {
-  font-size: 4rem;
-  color: white;
-}
 
 .page-container {
   min-height: 100vh;
@@ -49,7 +45,7 @@
 .game-number {
   font-family: fantasy;
   color: white;
-  font-size: 180%;
+  font-size: 3vw;
 }
 
 .game-flow {
@@ -60,6 +56,7 @@
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
   margin-top: 0;
+  margin-right: 1rem;
 
 }
 
@@ -124,14 +121,15 @@
   border-bottom-right-radius: 8px;
 }
 
-.player-input {
-  width: 80%;
-  margin-left: 8rem;
+#player-input {
+  min-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 input[type="text"] {
-  width: 80%;
-  height: 80%;
+  // width: 80%;
+  // height: 80%;
   padding: 5px;
   margin: 10px 0;
   border: 2px solid rgb(247, 167, 20);
@@ -139,22 +137,28 @@ input[type="text"] {
   background-color: #f9f9f9;
   color: #333;
   font-family: fantasy;
+  font-size: 2vw;
 }
 
 .question-number {
-  font-size: 22px;
+  font-size: 2vw;
   font-family: fantasy;
 }
 
 
 .score-title {
-  font-size: 38px;
+  font-size: 3vw;
   font-family: fantasy;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .score-points {
-  font-size: 28px;
+  font-size: 3vw;
   font-family: fantasy;
+  display: flex;
+  justify-content: center;
 }
 
 // .visual {
@@ -182,11 +186,34 @@ input[type="text"] {
 .crossed {
   opacity: 1;
   transition: opacity 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .checked {
   opacity: 1;
   transition: opacity 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#image-score {
+
+  max-width: 80%;
+  min-height: 80%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+.score-visual {
+  height: 55vh;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -194,6 +221,7 @@ input[type="text"] {
     width: 90vw;
     height: 7vh;
   }
+
 
   .game-container {
     margin-top: 2px;
@@ -207,12 +235,11 @@ input[type="text"] {
   .game-progress {
     height: 10%;
     width: 90%;
-    display: block;
   }
 
   .game-flow {
     width: 100%;
-    min-height: 60vh;
+    min-height: 70vh;
   }
 
   .game-score {
@@ -237,4 +264,86 @@ input[type="text"] {
 
   }
 
+  #player-input {
+    min-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .score-message {
+    display: none;
+  }
+
+  .score-phone {
+    display: flex;
+    justify-content: center;
+  }
+
+  .img-container {
+    height: 60%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #image-score {
+
+    max-width: 40%;
+    min-height: 60%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 10%;
+  }
+
+  .crossed {
+    display: block;
+    height: 90%;
+  }
+
+  .checked {
+    display: block;
+    height: 90%;
+  }
+
+  .score-title {
+    font-size: 3vw;
+  }
+
+  .score-visual {
+    width: 20%;
+    height: 50%;
+  }
+
+  .score-phone {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .score-visual {
+    width: 50%;
+    height: 50%;
+  }
+
+  .score-title {
+    font-size: 6vw;
+  }
+
+  .score-points {
+    font-size: 6vw;
+  }
+
+  input[type="text"] {
+    font-size: 4vw;
+  }
+
+  .question-number {
+    font-size: 4vw;
+  }
+
+  .game-number {
+    font-size: 6vw
+  }
 }

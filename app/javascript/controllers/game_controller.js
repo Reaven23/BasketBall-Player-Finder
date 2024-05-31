@@ -59,8 +59,8 @@ export default class extends Controller {
     console.log(correct);
     if (correct) {
       this.scoreVisualTarget.innerHTML = `
-      <div class="checked d-flex flex-column align-items-center justify-content-center">
-        <div class="img-container"><img src="/assets/checked.png" alt="" id="image" class=""></div>
+      <div class="checked">
+        <div class="img-container"><img src="/assets/checked.png" alt="" id="image-score" class=""></div>
         <div class="score-message">C'est fort, bravo!</div>
       </div>
     `;
@@ -68,8 +68,8 @@ export default class extends Controller {
   } else {
     console.log("hello false");
     this.scoreVisualTarget.innerHTML = `
-      <div class="crossed visual d-flex flex-column align-items-center justify-content-center">
-        <div class="img-container"><img src="/assets/crossed.png" alt="my image" id="image" class=""></div>
+      <div class="crossed">
+        <div class="img-container"><img src="/assets/crossed.png" alt="my image" id="image-score" class=""></div>
         <div class="score-message">C'est nul, essaie encore!</div>
       </div>
     `;
