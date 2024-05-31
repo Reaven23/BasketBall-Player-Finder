@@ -1,3 +1,6 @@
+Player.destroy_all
+puts "all players deleted"
+
 Player.create(
   first_name: 'Stephen',
   last_name: 'Curry',
@@ -36,7 +39,7 @@ Player.create(
   level: 'easy',
   points_record: 38,
   point_average: 20.7,
-  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJlL83bahYN4lV5Rl1t35qcCcLfV8774o0fUpkC7R6QA&s'
+  photo: 'https://img.20mn.fr/H-wdNsDMR4K834ZlpwgfSik/722x460_c-est-lui-le-titulaire-a-l-euro'
 )
 
 Player.create(
@@ -99,4 +102,4 @@ Player.create(
   photo: 'https://www.basketusa.com/wp-content/uploads/2024/03/kevin-durant.jpg'
 )
 
-puts "10 nba Player created"
+puts "10 nba easy Players created"
