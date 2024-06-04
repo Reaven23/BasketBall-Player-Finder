@@ -2,10 +2,11 @@
   <%= render 'shared/navbar' %>
 
 <div>
-  <video autoplay loop muted playsinline class="video-background">
-    <source src="<%= asset_path('background_video.mp4') %>" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<%= cl_video_tag("background_video", autoplay: true, loop: true, muted: true, class: "video-background") %>
+  <h1 class="catchphrase">Relève le défi ! Joue au grand quizz NBA et teste tes connaissances des joueurs NBA !</h1>
+<div class="block-button">
+  <%= link_to 'Jouer maintenant', start_easy_game_path, class: 'btn btn-orange btn-lg' %>
+</div>
 
 <%= link_to new_player_path do  %>
   <div class="button-classic d-none">Add your own player</div>
