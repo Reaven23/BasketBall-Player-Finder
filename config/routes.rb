@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   get 'ten_players', to: 'players#game_of_ten_easy'
   get 'choose_game', to: 'games#mode_choice'
 
+  resource :user, only: [] do
+    post :update_score, on: :collection
+  end
+
 end
