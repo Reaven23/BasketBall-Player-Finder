@@ -73,6 +73,10 @@
 //   transition: transform 150ms;
 //   transform: scale(1.02);
 //  }
+.page-container-ok {
+  height: 100vh;
+  overflow: hidden
+}
 
 .video-background {
   position: fixed;

@@ -1,46 +1,48 @@
 
+<div class="page-container-ok">
   <%= render 'shared/navbar' %>
 
-<div>
-<%= cl_video_tag("background_video", autoplay: true, loop: true, muted: true, class: "video-background") %>
-  <h1 class="catchphrase">Relève le défi ! Joue au grand quizz NBA et teste tes connaissances des joueurs NBA !</h1>
-<div class="block-button">
-  <%= link_to 'Jouer maintenant', start_easy_game_path, class: 'btn btn-orange btn-lg' %>
-</div>
-
-<%= link_to new_player_path do  %>
-  <div class="button-classic d-none">Add your own player</div>
-<% end %>
-
-<%= link_to list_path do %>
-  <div class="button-classic d-none">Update a player</div>
-<% end %>
-
-<div class="container-home d-none">
-  <div id="home" class="flex-column flex-center">
-    <h1>Basketball Players Knowledge Test</h1>
-    <div class="btn-home easy-game">
-      <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
-        <h2>Easy</h2>
-      <% end %>
+  <div>
+    <%= cl_video_tag("background_video", autoplay: true, loop: true, muted: true, class: "video-background") %>
+      <h1 class="catchphrase">Relève le défi ! Joue au grand quizz NBA et teste tes connaissances des joueurs NBA !</h1>
+    <div class="block-button">
+      <%= link_to 'Jouer maintenant', start_easy_game_path, class: 'btn btn-orange btn-lg' %>
     </div>
 
-      <div class="btn-home">
+    <%= link_to new_player_path do  %>
+      <div class="button-classic d-none">Add your own player</div>
+    <% end %>
+
+    <%= link_to list_path do %>
+      <div class="button-classic d-none">Update a player</div>
+    <% end %>
+
+    <div class="container-home d-none">
+      <div id="home" class="flex-column flex-center">
+      <h1>Basketball Players Knowledge Test</h1>
+      <div class="btn-home easy-game">
         <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
-          <h2>Medium</h2>
+          <h2>Easy</h2>
         <% end %>
       </div>
 
-      <div class="btn-home">
-        <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
-          <h2>Hard</h2>
-        <% end %>
-      </div>
+        <div class="btn-home">
+          <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
+            <h2>Medium</h2>
+          <% end %>
+        </div>
 
-       <div class="btn-home">
-        <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
-          <h2>Legend</h2>
-        <% end %>
-       </div>
+        <div class="btn-home">
+          <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
+            <h2>Hard</h2>
+          <% end %>
+        </div>
+
+        <div class="btn-home">
+          <%= link_to start_easy_game_path, method: :post, class: 'btn-home' do %>
+            <h2>Legend</h2>
+          <% end %>
+        </div>
+    </div>
   </div>
 </div>
