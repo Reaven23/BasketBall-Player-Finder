@@ -1,22 +1,7 @@
 class PlayersController < ApplicationController
-
-  def index
-    @players = Player.all
-    render json: @players
-  end
-
-  def list
-    @players = Player.all
-  end
-
   def game_of_ten_easy
     @ten_random_easy_players = Player.where(level: 'easy').sample(10)
     render json: @ten_random_easy_players
-  end
-
-  def show
-    @player = Player.find(params[:id])
-    render json: @player
   end
 
   def new
@@ -47,7 +32,7 @@ class PlayersController < ApplicationController
     end
   end
 
-  
+
   private
 
   def player_params
