@@ -80,10 +80,40 @@ export default class extends Controller {
     this.scoreVisualTarget.classList.remove('d-none');
   }
 
+  postScore() {
+    const url = `/user/update_score`;
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': document.querySelector("[name='csrf-token']").content
+      },
+      body: JSON.stringify({ points: this.score })
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      if (data.status === 'success') {
+        console.log('Score updated successfully');
+        // Optionally show a success message or redirect the user
+      } else {
+        console.error('Failed to update score:', data.message);
+        // Optionally show an error message
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      // Optionally show an error message
+    });
+  }
+
   endGame() {
     this.playerInputTarget.classList.add('d-none');
+    this.postScore()
     alert(`Jeu terminé! Votre score est de ${this.score} point${this.score > 0 ? 's' : ''}`);
   }
+
 
 
 }
