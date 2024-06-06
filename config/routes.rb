@@ -10,8 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :players, only: ['new', 'create', 'index', 'edit', 'update', 'show']
+  resources :players, only: ['new', 'create', 'edit', 'update']
   get 'list', to: 'players#list'
   get 'ten_players', to: 'players#game_of_ten_easy'
+  get 'choose_game', to: 'games#mode_choice'
 
 end
