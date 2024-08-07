@@ -18,5 +18,4 @@ Rails.application.routes.draw do
   resource :user, only: [] do
     post :update_score, on: :collection
   end
-
 end

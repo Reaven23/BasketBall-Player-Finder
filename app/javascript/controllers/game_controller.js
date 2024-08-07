@@ -96,24 +96,19 @@ export default class extends Controller {
       console.log(data);
       if (data.status === 'success') {
         console.log('Score updated successfully');
-        // Optionally show a success message or redirect the user
       } else {
         console.error('Failed to update score:', data.message);
-        // Optionally show an error message
       }
+      alert(`Jeu terminé! Votre score est de ${this.score} point${this.score > 0 ? 's' : ''}`);
     })
     .catch(error => {
       console.error('Error:', error);
-      // Optionally show an error message
     });
   }
 
   endGame() {
     this.playerInputTarget.classList.add('d-none');
     this.postScore()
-    alert(`Jeu terminé! Votre score est de ${this.score} point${this.score > 0 ? 's' : ''}`);
+    // alert(`Jeu terminé! Votre score est de ${this.score} point${this.score > 0 ? 's' : ''}`);
   }
-
-
-
 }
