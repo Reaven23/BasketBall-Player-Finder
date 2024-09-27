@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="game"
 export default class extends Controller {
-  static targets = ["playerImage", "playerInput", "checkButton", "progressGameBar", "questionNumber", "answer", "scoreVisual", "score", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+  static targets = ["playerImage", "playerInput", "checkButton", "progressGameBar", "questionNumber", "answer", "scoreVisual", "score", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "returnButton"];
 
   connect() {
     console.log("hello game");
@@ -99,11 +99,20 @@ export default class extends Controller {
       } else {
         console.error('Failed to update score:', data.message);
       }
-      alert(`Jeu terminé! Votre score est de ${this.score} point${this.score > 0 ? 's' : ''}`);
+      this.showEndGameModal();
     })
     .catch(error => {
       console.error('Error:', error);
     });
+  }
+
+  showEndGameModal() {
+    const endButton = document.querySelector(".return-button")
+    endButton.classList.remove("d-none")
+    const modal = new bootstrap.Modal(document.getElementById('endGameModal'));
+    const modalMessage = document.getElementById("modalMessage");
+    modalMessage.textContent = `Jeu terminé! Votre score est de ${this.score} point${this.score > 0 ? 's' : ''}`;
+    modal.show();
   }
 
   endGame() {

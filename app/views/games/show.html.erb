@@ -1,5 +1,24 @@
-<div class="page-container">
+<!------------------------ MODALE FIN DE GAME ---------------------------------------->
+<div class="modal fade" id="endGameModal" tabindex="-1" aria-labelledby="endGameModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="endGameModalLabel">Fin de la Partie</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="modalMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+        <%= link_to "Jouer à nouveau", start_easy_game_path %>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+<div class="page-container">
   <div class="game-title">
     <div class="game-number">
       <%= Game.find(params[:id]).name  %>
@@ -32,6 +51,7 @@
 
       <div class="player-in">
         <input data-action="keydown->game#handleKeyDown" data-game-target="playerInput" type="text" id="player-input" placeholder="Entrez votre réponse">
+        <%= link_to "Retour Acceuil", root_path, class: "d-none return-button" %>
       </div>
     </div>
 

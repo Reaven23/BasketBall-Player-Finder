@@ -10,7 +10,7 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(player_params)
-    if @player.save!
+    if @player.save
       flash[:notice] = "Le joueur a été créé avec succès !"
       redirect_to root_path
     else
