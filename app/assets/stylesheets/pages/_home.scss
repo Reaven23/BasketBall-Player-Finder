@@ -1,8 +1,3 @@
-// // Specific CSS for your home-page
-// body {
-//   background-image: url("mj-1.jpg");
-//   background-size: contain
-// }
 
 * {
   // box-sizing: border-box;
@@ -22,58 +17,10 @@ h2 {
   font-size: 4rem;
 }
 
-// .container-home {
-//   width: 100vw;
-//   height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 0 auto;
-//   padding: 2rem;
-// }
-
-// .flex-column {
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .flex-center {
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .justify-center {
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .text-center {
-//   text-align: center;
-// }
 
 .hidden {
   display: none;
 }
-
-//  .btn-home {
-//   font-size: 2rem;
-//   font-family: fantasy;
-//   padding: 2rem 0;
-//   width: 35rem;
-//   text-align: center;
-//   margin-bottom: 1rem;
-//   text-decoration: none;
-//   color: rgb(30, 29, 29);
-//   background-color: rgb(194, 138, 18);
-//   border-radius: 4px;
-//  }
-
-//  .btn-home:hover {
-//   cursor: pointer;
-//   box-shadow: 0 0.5rem 1.5rem 0 rgb(203, 152, 33);
-//   transition: transform 150ms;
-//   transform: scale(1.02);
-//  }
 
 .page-container-ok {
   height: 100vh;
@@ -84,37 +31,109 @@ h2 {
   padding-top: 1em;
   padding-left: 1em;
   padding-right: 1em;
+  padding-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-// .video-background {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
+.card-container {
+  width: 36vh;
+  height: 36vh;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
 
-//   z-index: -1; /* Derrière tout le contenu */
-//   object-fit: cover; /* Pour que la vidéo couvre toute la zone */
-// }
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: rgba(43, 42, 42, 0.8);
+}
 
-// .btn-orange {
-//   background-color: #FFA500; /* Couleur orange de la balle de basket */
-//   color: white;
-//   font-family: fantasy; /* Police fantasy */
-//   font-size: 1.5rem;
-//   padding: 10px 20px;
-//   border: none;
-//   border-radius: 5px;
-//   transition: background-color 0.3s ease;
+.card .front-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
 
-//   &:hover {
-//     background-color: #FF8C00; /* Une couleur orange plus foncée */
-//   }
-// }
+.card .front-content p {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 1;
+  background: linear-gradient(-45deg, #f8f9f8 0%, #ffa331 100% );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
 
-// .block-button {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100vh;
-// }
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  color: #e8e8e8;
+  padding: 20px;
+  line-height: 1.5;
+  border-radius: 5px;
+  pointer-events: none;
+  transform: translateX(-96%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  text-decoration: none;
+}
+
+.easy-card .card-container .card .content {
+  background: linear-gradient(-45deg, #070707 0%, #02da10 100% );
+}
+
+.medium-card .card-container .card .content {
+  background: linear-gradient(-45deg, #070707 0%, #1977fa 100% );
+}
+
+.hard-card .card-container .card .content {
+  background: linear-gradient(-45deg, #070707 0%, #f9d909 100% );
+}
+
+.legend-card .card-container .card .content {
+  background: linear-gradient(-45deg, #070707 0%, #e43301 100% );
+}
+
+.card .content .heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card:hover .content {
+  transform: translateY(0);
+}
+
+.card:hover .front-content {
+  transform: translateX(-30%);
+}
+
+.card:hover .front-content p {
+  opacity: 0;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.text-deco {
+  text-decoration: none;
+}
