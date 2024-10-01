@@ -6,6 +6,7 @@
       <%# <%= link_to 'Jouer maintenant', choose_game_path, class: 'btn btn-orange btn-lg'%>
   </div>
   <div class="cards-container">
+    <%= link_to start_easy_game_path, method: :post, class: 'text-deco' do %>
     <div class="easy-card">
       <div class="card-container">
         <div class="card">
@@ -21,6 +22,7 @@
         </div>
       </div>
     </div>
+    <% end %>
 
     <div class="medium-card">
       <div class="card-container">
