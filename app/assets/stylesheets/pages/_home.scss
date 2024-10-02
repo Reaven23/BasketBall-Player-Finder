@@ -31,14 +31,14 @@ h2 {
   padding-top: 1em;
   padding-left: 1em;
   padding-right: 1em;
-  padding-bottom: 3em;
+  padding-bottom: 5em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .card-container {
-  width: 36vh;
+  width: 20vw;
   height: 36vh;
   position: relative;
   border-radius: 15px;
@@ -86,11 +86,11 @@ h2 {
   text-align: center;
   gap: 10px;
   color: #e8e8e8;
-  padding: 20px;
+  padding: 27px;
   line-height: 1.5;
   border-radius: 5px;
   pointer-events: none;
-  transform: translateX(-96%);
+  transform: translateX(-92%);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   text-decoration: none;
 }
