@@ -42,7 +42,6 @@ h2 {
   height: 36vh;
   position: relative;
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
@@ -111,6 +110,21 @@ h2 {
   background: linear-gradient(-45deg, #070707 0%, #e43301 100% );
 }
 
+.easy-card .card-container  {
+  box-shadow: rgba(66, 255, 84, 0.796) 0px 22px 70px 4px;
+}
+
+.medium-card .card-container  {
+  box-shadow: rgba(4, 102, 249, 0.796) 0px 22px 70px 4px;
+}
+
+.hard-card .card-container  {
+  box-shadow: rgba(243, 254, 24, 0.905) 0px 22px 70px 4px;
+}
+
+.legend-card .card-container  {
+  box-shadow: rgba(246, 80, 3, 0.796) 0px 22px 70px 4px;
+}
 .card .content .heading {
   font-size: 32px;
   font-weight: 700;
