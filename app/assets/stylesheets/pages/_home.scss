@@ -31,7 +31,7 @@ h2 {
   padding-top: 1em;
   padding-left: 1em;
   padding-right: 1em;
-  padding-bottom: 5em;
+  padding-bottom: 2em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -143,9 +143,9 @@ h2 {
 }
 
 .cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
+  // display: flex;
+  // justify-content: center;
+  // gap: 2em;
 }
 
 .text-deco {

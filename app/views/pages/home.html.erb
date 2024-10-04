@@ -5,13 +5,13 @@
   <div>
       <%# <%= link_to 'Jouer maintenant', choose_game_path, class: 'btn btn-orange btn-lg'%>
   </div>
-  <div class="cards-container">
-    <%= link_to start_easy_game_path, method: :post, class: 'text-deco' do %>
-    <div class="easy-card">
+  <div class="cards-container row">
+    <div class="easy-card col-sm-6 col-12 mb-4 d-flex justify-content-end">
+      <%= link_to start_easy_game_path, method: :post, class: 'text-deco' do %>
       <div class="card-container">
         <div class="card">
           <div class="front-content">
-            <p>Niveau Rookie</p>
+            <p>Rookie</p>
           </div>
           <div class="content">
             <p class="heading">Rookie</p>
@@ -21,14 +21,14 @@
           </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
 
-    <div class="medium-card">
+    <div class="medium-card col-sm-6 col-12 mb-4 d-flex justify-content-start">
       <div class="card-container">
         <div class="card">
           <div class="front-content">
-            <p>Niveau Sophomore</p>
+            <p>Sophomore</p>
           </div>
           <div class="content">
             <p class="heading">Sophomore</p>
@@ -39,12 +39,14 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="hard-card">
+  <div class="cards-container row">
+    <div class="hard-card col-sm-6 col-12 mb-4 d-flex justify-content-end">
       <div class="card-container">
         <div class="card">
           <div class="front-content">
-            <p>Niveau Senior</p>
+            <p>Senior</p>
           </div>
           <div class="content">
             <p class="heading">Senior</p>
@@ -56,7 +58,7 @@
       </div>
     </div>
 
-    <div class="legend-card">
+    <div class="legend-card col-sm-6 col-12 mb-4 d-flex justify-content-start">
       <div class="card-container">
         <div class="card">
           <div class="front-content">
