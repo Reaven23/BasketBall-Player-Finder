@@ -1,0 +1,9 @@
+<div class="rankings-container">
+  <%= render 'shared/navbar' %>
+
+  <div class="rankings-by-score">
+    <% @users_sorted_by_score.each do |user| %>
+      <p><%=user.email %></p>
+    <% end %>
+  </div>
+</div>

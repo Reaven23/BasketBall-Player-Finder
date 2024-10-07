@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get 'rankings', to: 'pages#rankings'
 
   get 'start_easy_game', to: 'games#start_easy_game'
 
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   resources :players, only: ['new', 'create', 'edit', 'update']
   get 'list', to: 'players#list'
   get 'ten_players', to: 'players#game_of_ten_easy'
-  get 'choose_game', to: 'games#mode_choice'
+
 
   resource :user, only: [] do
     post :update_score, on: :collection

@@ -1,0 +1,14 @@
+.rankings-container {
+  height: 100vh;
+  background-image: url('back-2.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
