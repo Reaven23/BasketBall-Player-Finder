@@ -1,9 +1,40 @@
 <div class="rankings-container">
   <%= render 'shared/navbar' %>
 
-  <div class="rankings-by-score">
-    <% @users_sorted_by_score.each do |user| %>
-      <p><%=user.email %></p>
-    <% end %>
+  <div class="container">
+    <!-- Barre de recherche -->
+    <div class="row justify-content-center">
+      <div class="col-md-6 mb-4">
+        <input type="text" id="player-search" class="form-control" placeholder="Rechercher un joueur...">
+      </div>
+    </div>
+
+    <!-- Tableau avec scrollbar -->
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="table-responsive rankings-table">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th class="text-end">Points</th>
+              </tr>
+            </thead>
+            <tbody id="player-table-body">
+              <% @users_sorted_by_score.each do |user| %>
+                <tr>
+                  <%# <td><%= image_tag user.photo_url, class: 'img-thumbnail', size: "50x50" %>
+                  <%# <td><%= user.name %>
+                  <td><%= user.email %></td>
+                  <td class="text-end"><%= user.points %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
