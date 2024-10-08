@@ -103,3 +103,66 @@ Player.create(
 )
 
 puts "10 nba easy Players created"
+puts "creating 10 USERS"
+
+User.create(
+  email: "ad.regis@gmail.com",
+  points: 4,
+  password: "adrien"
+)
+
+User.create(
+  email: "roger@gmail.com",
+  points: 435,
+  password: "adrien"
+)
+
+User.create(
+  email: "yesitis@gmail.com",
+  points: 234,
+  password: "adrien"
+)
+
+User.create(
+  email: "johnisthenewcadillac@gmail.com",
+  points: 2345,
+  password: "adrien"
+)
+
+User.create(
+  email: "rockit@gmail.com",
+  points: 23,
+  password: "adrien"
+)
+
+User.create(
+  email: "jumpcityjump@gmail.com",
+  points: 234,
+  password: "adrien"
+)
+
+User.create(
+  email: "douchee@gmail.com",
+  points: 543,
+  password: "adrien"
+)
+
+User.create(
+  email: "baag@gmail.com",
+  points: 654,
+  password: "adrien"
+)
+
+User.create(
+  email: "nomoreidea@gmail.com",
+  points: 435,
+  password: "adrien"
+)
+
+User.create(
+  email: "thereyougo@gmail.com",
+  points: 7658,
+  password: "adrien"
+)
+
+puts "10 USERS created"
