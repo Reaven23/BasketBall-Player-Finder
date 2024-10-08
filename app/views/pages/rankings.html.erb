@@ -5,6 +5,13 @@
 
     <!-- Tableau avec scrollbar -->
     <div class="score-board">
+      <% @users_sorted_by_score.each do |user|%>
+        <div class="scorer">
+          <div class="user-photo"></div>
+          <div class="user-name"><%= user.email %></div>
+          <div class="user-points"><%= user.points %> pts</div>
+        </div>
+      <% end %>
 
     </div>
 
