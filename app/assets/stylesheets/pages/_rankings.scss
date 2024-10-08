@@ -8,7 +8,24 @@
   padding-left: 1em;
   padding-right: 1em;
   padding-bottom: 2em;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+}
+
+.score-board {
+  height: 100%;
+  background-color: rgba(43, 42, 42, 0.8);
+  border-radius: 15px;
+}
+
+.container-boards {
+  height: 88vh;
+  width: 80vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  margin-inline: auto;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
