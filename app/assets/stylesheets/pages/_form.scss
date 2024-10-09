@@ -1,0 +1,66 @@
+.question-container {
+  width: 60VW;
+  margin: auto;
+  background-color: rgba(43, 42, 42, 0.8);
+  border-radius: 10px;
+  color: #f9f9f9;
+}
+
+.name-tag {
+  display: flex;
+  gap: 1rem;
+
+}
+
+.name-tag .input {
+  width: -webkit-fill-available;
+}
+
+
+.question-input input {
+    padding: 5px;
+    margin: 10px 0;
+    border: 2px solid rgb(247, 167, 20);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: fantasy;
+    height: 5vh;
+  }
+
+
+
+.sign-up-container {
+  background-image: url('back-2.webp');
+  height: 100vh;
+}
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: rgb(247, 167, 20);
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid rgb(247, 167, 20);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 rgb(247, 167, 20);
+}
+
+.btn:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 rgb(247, 167, 20);
+}
+
+.btn:active {
+  transform: scale(0.9);
+}

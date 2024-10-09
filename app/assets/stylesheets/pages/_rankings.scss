@@ -41,3 +41,20 @@
   border-radius: 2px;
   align-items: center;
 }
+
+.search-bar input {
+  padding: 5px;
+  margin: 10px 0;
+  border: 2px solid rgb(247, 167, 20);
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: fantasy;
+  height: 8vh;
+}
+
+.pl-img {
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%; /* Rend l'image circulaire */
+}
