@@ -64,3 +64,36 @@
 .btn:active {
   transform: scale(0.9);
 }
+
+.btn-small {
+  height:50%;
+  position: relative;
+  display: inline-block;
+  padding: 8px 22px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color:rgb(240, 105, 1);
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid rgb(240, 105, 1);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 rgb(240, 105, 1);
+}
+
+.btn-small:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 rgb(240, 105, 1);
+}
+
+.btn-small:active {
+  transform: scale(0.9);
+}
+
+.password-forgotten {
+  text-decoration: underline;
+  color: white;
+  
+}

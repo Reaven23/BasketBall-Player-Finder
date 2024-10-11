@@ -1,20 +1,42 @@
-<h2>Log in</h2>
+<div class="sign-up-container p-3">
+  <%= render 'shared/navbar' %>
+  <div class="question-container mt-5 p-5">
+    <h2 class="text-center">Se connecter</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <div class="question-input">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+        </div>
+        <div class="question-input">
+          <%= f.input :password, label: "Mot de passe",
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+        </div>
+        <%= f.input :remember_me, label: "Se souvenir de moi ?", as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="btns">
+        <div class= "d-flex mb-3 align-items-end">
+          <div class="form-actions me-4">
+            <%= f.button :submit, "Se connecter" %>
+          </div>
+            <% end %>
+
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to "Créez un compte", new_registration_path(resource_name), class: "btn-small" %><br />
+          <% end %>
+
+        </div>
+
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Mot de passe oublié?", new_password_path(resource_name), class:"password-forgotten" %><br />
+          <% end %>
+      </div>
+
+
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

@@ -1,7 +1,7 @@
 <div class="sign-up-container p-3">
   <%= render 'shared/navbar' %>
   <div class="question-container mt-3 p-4">
-    <h2>Créer un compte</h2>
+    <h2 class="text-center">Créer un compte</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
       <%= f.error_notification %>
