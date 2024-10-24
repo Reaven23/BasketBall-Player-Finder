@@ -95,5 +95,14 @@
 .password-forgotten {
   text-decoration: underline;
   color: white;
-  
+
 }
+
+
+.avatar-img {
+  border: 2px solid;
+  transition: border-color 0.3s ease;
+  border-radius: 25%;
+}
+
+/* Style pour le bouton radio */

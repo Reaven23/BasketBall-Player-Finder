@@ -7,46 +7,56 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <!-- Pseudonyme -->
         <div class="question-input">
-          <%= f.input :nickname, label: "Pseudonyme :",
-                    required: true,
-                    input_html: { autocomplete: "Pseudonyme" } %>
+          <%= f.input :nickname, label: "Pseudonyme :", required: true, input_html: { autocomplete: "Pseudonyme" } %>
         </div>
+
+        <!-- Nom et Prénom -->
         <div class="name-tag">
           <div class="col">
             <div class="question-input">
-              <%= f.input :first_name, label: "Prénom :",
-                          required: true,
-                          input_html: { autocomplete: "Prénom" } %>
+              <%= f.input :first_name, label: "Prénom :", required: true, input_html: { autocomplete: "Prénom" } %>
             </div>
           </div>
           <div class="col">
             <div class="question-input">
-              <%= f.input :last_name, label: "Nom :",
-                          required: true,
-                          input_html: { autocomplete: "Nom" } %>
+              <%= f.input :last_name, label: "Nom :", required: true, input_html: { autocomplete: "Nom" } %>
             </div>
           </div>
         </div>
+
+        <!-- Champ pour uploader une photo -->
         <div class="question-input">
-          <%= f.input :photo, as: :file, label: "Photo de profil :" %>
+          <%= f.input :photo, as: :file, label: "Photo de profil (facultatif) :" %>
         </div>
+
+        <!-- Choix d'un avatar parmi 10 avatars prédéfinis -->
         <div class="question-input">
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" }%>
+          <label>Ou choisissez un avatar parmi ceux proposés :</label>
+          <div class="avatar-selection d-flex flex-wrap">
+            <% (1..10).each do |i| %>
+              <div class="avatar-option m-2">
+                <%= f.radio_button :selected_avatar, "avatar_#{i}", id: "avatar_#{i}" %>
+                <%= image_tag("avatars/avatar_#{i}.webp", class: "avatar-img", width: "60", height: "60", alt: "Avatar #{i}") %>
+              </div>
+            <% end %>
+          </div>
         </div>
+
+        <!-- Email -->
         <div class="question-input">
-          <%= f.input :password, label: "Mot de passe :",
-                      required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "Mot de passe" } %>
+          <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" } %>
         </div>
+
+        <!-- Mot de passe -->
         <div class="question-input">
-          <%= f.input :password_confirmation, label: "Confirmation du mot de passe :",
-                      required: true,
-                      input_html: { autocomplete: "Mot de passe" } %>
+          <%= f.input :password, label: "Mot de passe :", required: true, hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length), input_html: { autocomplete: "Mot de passe" } %>
+        </div>
+
+        <!-- Confirmation du mot de passe -->
+        <div class="question-input">
+          <%= f.input :password_confirmation, label: "Confirmation du mot de passe :", required: true, input_html: { autocomplete: "Mot de passe" } %>
         </div>
       </div>
 
