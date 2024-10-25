@@ -102,67 +102,115 @@ Player.create(
   photo: 'https://www.basketusa.com/wp-content/uploads/2024/03/kevin-durant.jpg'
 )
 
+PHOTO = {
+  1 => "app/assets/images/avatars/avatar_1.webp",
+  2 => "app/assets/images/avatars/avatar_2.webp",
+  3 => "app/assets/images/avatars/avatar_3.webp",
+  4 => "app/assets/images/avatars/avatar_4.webp",
+  5 => "app/assets/images/avatars/avatar_5.webp",
+  6 => "app/assets/images/avatars/avatar_6.webp",
+  7 => "app/assets/images/avatars/avatar_7.webp",
+  8 => "app/assets/images/avatars/avatar_8.webp",
+  9 => "app/assets/images/avatars/avatar_9.webp",
+  10 => "app/assets/images/avatars/avatar_10.webp",
+}
+
 puts "10 nba easy Players created"
 puts "creating 10 USERS"
+User.destroy_all
 
-User.create(
+user1 = User.create!(
   email: "ad.regis@gmail.com",
   points: 4,
-  password: "adrien"
+  password: "adrien",
+  nickname: "Jordan45"
 )
+avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+user1.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
-User.create(
-  email: "roger@gmail.com",
-  points: 435,
-  password: "adrien"
-)
 
-User.create(
+
+user2 = User.create(
   email: "yesitis@gmail.com",
   points: 234,
-  password: "adrien"
-)
+  password: "adrien",
+  nickname: "Alex78"
+  )
 
-User.create(
+avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+user2.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+
+user3 = User.create(
   email: "johnisthenewcadillac@gmail.com",
   points: 2345,
-  password: "adrien"
-)
+  password: "adrien",
+  nickname: "JuvisyBasketClub"
+  )
+avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+user3.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
-User.create(
+
+user4 = User.create(
   email: "rockit@gmail.com",
   points: 23,
-  password: "adrien"
-)
+  password: "adrien",
+  nickname: "Ad.andforward"
+  )
+avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+user4.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
-User.create(
+user5 = User.create(
   email: "jumpcityjump@gmail.com",
   points: 234,
-  password: "adrien"
-)
+  password: "adrien",
+  nickname: "Oeil de Lynx"
+  )
+avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+user5.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
-User.create(
+user6 = User.create(
   email: "douchee@gmail.com",
   points: 543,
-  password: "adrien"
-)
+  password: "adrien",
+  nickname: "MemesMaster77"
+  )
+avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+user6.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
-User.create(
+user7 = User.create(
   email: "baag@gmail.com",
   points: 654,
-  password: "adrien"
-)
+  password: "adrien",
+  nickname: "PointsTrimmer"
+  )
+avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+user7.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
-User.create(
+user8 = User.create(
   email: "nomoreidea@gmail.com",
   points: 435,
-  password: "adrien"
-)
+  password: "adrien",
+  nickname: "Kobe24"
+  )
+avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+user8.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
-User.create(
+user9 = User.create(
   email: "thereyougo@gmail.com",
   points: 7658,
-  password: "adrien"
+  password: "adrien",
+  nickname: "tHE EDGE wALKER"
+  )
+avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+user9.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+
+user10 = User.create(
+  email: "roger@gmail.com",
+  points: 435,
+  password: "adrien",
+  nickname: "You see me, now you don't"
 )
+avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+user10.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
 puts "10 USERS created"
