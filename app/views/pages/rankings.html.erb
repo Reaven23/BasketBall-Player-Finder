@@ -1,4 +1,4 @@
-<div class="rankings-container">
+<div class="rankings-container" data-controller="search">
   <%= render 'shared/navbar' %>
   <div class="container-boards">
 
@@ -6,13 +6,12 @@
     <!-- Tableau avec scrollbar -->
     <div class="score-board">
       <% @users_sorted_by_score.each do |user|%>
-        <div class="scorer">
+        <div class="scorer" data-search-target="scorer">
           <% if user.photo.attached? %>
               <%= image_tag user.photo, alt: "#{user.nickname}'s photo", class: "pl-img" %>
           <% end %>
           <div class="user-nickname"><%= user.nickname %></div>
-          <div class="user-name"><%= user.email %></div>
-          <div class="user-points"><%= user.points %> pts</div>
+          <div class="user-points"><%= user.points.nil? ? "0 pt" : "#{user.points} pts" %> </div>
         </div>
       <% end %>
 
@@ -21,7 +20,7 @@
     <!-- Barre de recherche -->
     <div class="search-bar">
       <div class="">
-        <input type="text" id="player-search" class="form-control" placeholder="Rechercher un joueur...">
+        <input type="text" id="player-search" class="form-control" placeholder="Rechercher un joueur..." data-search-target="input" data-action="input->search#search">
       </div>
     </div>
 

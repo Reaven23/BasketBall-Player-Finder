@@ -36,10 +36,11 @@
   height: 5vh;
   display: flex;
   margin-bottom: 4px;
-  justify-content: space-around;
+  justify-content: start;
   background-color: rgba(248, 146, 73, 0.5);
   border-radius: 2px;
   align-items: center;
+  padding-left: 2em;
 }
 
 .search-bar input {
@@ -56,5 +57,21 @@
 .pl-img {
   height: 90%;
   object-fit: cover;
-  border-radius: 50%; /* Rend l'image circulaire */
+  border-radius: 50%;
+}
+
+.user-nickname {
+  margin-left: 4em;
+  color: white;
+  flex-grow: 1;
+}
+
+.user-points {
+  margin-right: 2em;
+  color: white;
+}
+
+.highlight {
+  border: 2px solid #0ba0eb;
+  border-radius: 5px;
 }
