@@ -3,11 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   attr_accessor :selected_avatar
 
-  has_many :games
+  has_many :games, dependent: :destroy
   has_one_attached :photo
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  # after_commit :attach_selected_avatar, on: [:create, :update]
+  after_commit :attach_selected_avatar, on: [:create, :update]
 
   private
 

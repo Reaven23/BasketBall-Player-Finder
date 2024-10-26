@@ -33,7 +33,7 @@
 .sign-up-container {
   background-image: url('back-1.png');
   background-size: cover;
-  height: 100%;
+  min-height: 100vh
 }
 
 
@@ -106,4 +106,7 @@
   border-radius: 25%;
 }
 
+.mon-hint {
+  color: white;
+}
 /* Style pour le bouton radio */

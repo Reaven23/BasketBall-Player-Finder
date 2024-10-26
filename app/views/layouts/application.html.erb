@@ -9,11 +9,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fantasy&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   </head>
 
   <body data-turbolinks="false">
     <%= render "shared/flashes" %>
-     <%# <%= cl_video_tag("background_video", autoplay: true, loop: true, muted: true, class: "video-background") %> 
+     <%# <%= cl_video_tag("background_video", autoplay: true, loop: true, muted: true, class: "video-background") %>
 
     <%= yield %>
   </body>
