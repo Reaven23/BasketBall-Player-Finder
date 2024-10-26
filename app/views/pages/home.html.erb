@@ -1,14 +1,12 @@
 
-<div class="page-container-ok">
+<div class="page-container-ok" data-controller="overlay">
   <%= render 'shared/navbar' %>
+  <div class="overlay d-none" data-overlay-target="overlay"></div>
 
-  <div>
-      <%# <%= link_to 'Jouer maintenant', choose_game_path, class: 'btn btn-orange btn-lg'%>
-  </div>
   <div class="cards-container row">
     <div class="easy-card col-sm-6 col-12 mb-4 d-flex justify-content-end">
       <%= link_to start_easy_game_path, method: :post, class: 'text-deco' do %>
-      <div class="card-container">
+      <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
         <div class="card">
           <div class="front-content">
             <p>Rookie</p>
@@ -25,7 +23,7 @@
     </div>
 
     <div class="medium-card col-sm-6 col-12 mb-4 d-flex justify-content-start">
-      <div class="card-container">
+      <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
         <div class="card">
           <div class="front-content">
             <p>Sophomore</p>
@@ -43,7 +41,7 @@
 
   <div class="cards-container row">
     <div class="hard-card col-sm-6 col-12 mb-4 d-flex justify-content-end">
-      <div class="card-container">
+      <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
         <div class="card">
           <div class="front-content">
             <p>Senior</p>
@@ -58,8 +56,8 @@
       </div>
     </div>
 
-    <div class="legend-card col-sm-6 col-12 mb-4 d-flex justify-content-start">
-      <div class="card-container">
+    <div class="legend-card col-sm-6 col-12 mb-4 d-flex justify-content-start" >
+      <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
         <div class="card">
           <div class="front-content">
             <p>Hall of Famers</p>

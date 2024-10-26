@@ -1,6 +1,8 @@
 .navbar {
   height: 12vh;
   border-radius: 20px;
+  position: relative;
+  z-index: 20;
 }
 
 .navbar a {

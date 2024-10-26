@@ -142,12 +142,31 @@ h2 {
   opacity: 0;
 }
 
-.cards-container {
-  // display: flex;
-  // justify-content: center;
-  // gap: 2em;
-}
-
 .text-deco {
   text-decoration: none;
+}
+
+.cards-container > div {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+.highlight-card {
+  opacity: 1;
+  z-index: 10;
+}
+
+/* L'overlay pour assombrir tout sauf la carte survolée */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  z-index: 5;
+  transition: opacity 3.5s ease;
+  pointer-events: none;
 }
