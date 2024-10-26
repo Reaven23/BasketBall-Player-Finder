@@ -170,3 +170,9 @@ h2 {
   transition: opacity 3.5s ease;
   pointer-events: none;
 }
+
+.card .content strong {
+  font-size: 1.4em;
+  color: #ffa500;
+  font-weight: bold;
+}
