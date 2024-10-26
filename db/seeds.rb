@@ -125,7 +125,7 @@ user1 = User.create!(
   password: "adrien",
   nickname: "Jordan45"
 )
-avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user1.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
 
@@ -137,7 +137,7 @@ user2 = User.create(
   nickname: "Alex78"
   )
 
-avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user2.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
 user3 = User.create(
@@ -146,7 +146,7 @@ user3 = User.create(
   password: "adrien",
   nickname: "JuvisyBasketClub"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user3.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
 
@@ -156,7 +156,7 @@ user4 = User.create(
   password: "adrien",
   nickname: "Ad.andforward"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user4.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
 user5 = User.create(
@@ -165,7 +165,7 @@ user5 = User.create(
   password: "adrien",
   nickname: "Oeil de Lynx"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user5.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
 user6 = User.create(
@@ -174,7 +174,7 @@ user6 = User.create(
   password: "adrien",
   nickname: "MemesMaster77"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user6.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
 user7 = User.create(
@@ -183,7 +183,7 @@ user7 = User.create(
   password: "adrien",
   nickname: "PointsTrimmer"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user7.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
 user8 = User.create(
@@ -201,7 +201,7 @@ user9 = User.create(
   password: "adrien",
   nickname: "tHE EDGE wALKER"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user9.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
 user10 = User.create(
@@ -210,7 +210,7 @@ user10 = User.create(
   password: "adrien",
   nickname: "You see me, now you don't"
 )
-avatar_path = Rails.root.join(PHOTO[rand(1..2)])
+avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user10.photo.attach(io: File.open(avatar_path), filename: "random avatar")
 
 puts "10 USERS created"
