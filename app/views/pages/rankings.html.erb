@@ -6,7 +6,7 @@
     <!-- Tableau avec scrollbar -->
     <div class="score-board">
       <% @users_sorted_by_score.each do |user|%>
-        <div class="scorer" data-search-target="scorer">
+        <div class="scorer <%= 'highlight' if current_user == user && user_signed_in? %>" data-search-target="scorer">
           <% if user.photo.attached? %>
               <%= image_tag user.photo, alt: "#{user.nickname}'s photo", class: "pl-img" %>
           <% end %>

@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     console.log("hello search");
 
-    this.clearHighlights();
+    // this.clearHighlights();
   }
 
   search() {
