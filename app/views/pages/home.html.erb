@@ -23,6 +23,7 @@
     </div>
 
     <div class="medium-card col-sm-6 col-12 mb-4 d-flex justify-content-start">
+       <%= link_to start_medium_game_path, method: :post, class: 'text-deco' do %>
       <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
         <div class="card">
           <div class="front-content">
@@ -37,10 +38,12 @@
         </div>
       </div>
     </div>
+    <% end %>
   </div>
 
   <div class="cards-container row">
     <div class="hard-card col-sm-6 col-12 mb-4 d-flex justify-content-end">
+      <%= link_to start_hard_game_path, method: :post, class: 'text-deco' do %>
       <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
         <div class="card">
           <div class="front-content">
@@ -54,9 +57,11 @@
           </div>
         </div>
       </div>
+      <% end %>
     </div>
 
     <div class="legend-card col-sm-6 col-12 mb-4 d-flex justify-content-start" >
+      <%= link_to start_legend_game_path, method: :post, class: 'text-deco' do %>
       <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
         <div class="card">
           <div class="front-content">
@@ -72,4 +77,5 @@
       </div>
     </div>
   </div>
+  <% end %>
 </div>

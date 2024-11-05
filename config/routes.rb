@@ -6,12 +6,18 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
 
   get 'start_easy_game', to: 'games#start_easy_game'
+  get 'start_medium_game', to: 'games#start_medium_game'
+  get 'start_hard_game', to: 'games#start_hard_game'
+  get 'start_legend_game', to: 'games#start_legend_game'
 
   resources :games, only: ['show']
 
   resources :players, only: ['new', 'create', 'edit', 'update']
   get 'list', to: 'players#list'
-  get 'ten_players', to: 'players#game_of_ten_easy'
+  get 'ten_players_easy', to: 'players#game_of_ten_easy'
+  get 'ten_players_medium', to: 'players#game_of_ten_medium'
+  get 'ten_players_hard', to: 'players#game_of_ten_hard'
+  get 'ten_players_legend', to: 'players#game_of_ten_legend'
 
 
   resource :user, only: [] do

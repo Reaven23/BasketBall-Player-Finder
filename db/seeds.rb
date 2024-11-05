@@ -1,6 +1,8 @@
 Player.destroy_all
 puts "all players deleted"
 
+# _____________________________ Players Easy _____________________________
+
 Player.create(
   first_name: 'Stephen',
   last_name: 'Curry',
@@ -101,6 +103,405 @@ Player.create(
   point_average: 27.3,
   photo: 'https://www.basketusa.com/wp-content/uploads/2024/03/kevin-durant.jpg'
 )
+
+Player.create(
+  first_name: 'Shaquille',
+  last_name: 'O\'Neal',
+  birth_year: '1972',
+  level: 'easy',
+  points_record: 61,
+  point_average: 23.7,
+  photo: 'https://b-rise.com/wp-content/uploads/2018/06/Shaquille-ONeal-Lakers-2.jpg'
+)
+
+Player.create(
+  first_name: 'Tim',
+  last_name: 'Duncan',
+  birth_year: '1976',
+  level: 'easy',
+  points_record: 53,
+  point_average: 19.0,
+  photo: 'https://i0.wp.com/leroster.com/wp-content/uploads/2023/04/timduncan.jpeg'
+)
+
+Player.create(
+  first_name: 'Larry',
+  last_name: 'Bird',
+  birth_year: '1956',
+  level: 'easy',
+  points_record: 60,
+  point_average: 24.3,
+  photo: 'https://i.ytimg.com/vi/Naz2ZlTt_Hk/maxresdefault.jpg'
+)
+
+Player.create(
+  first_name: 'Magic',
+  last_name: 'Johnson',
+  birth_year: '1959',
+  level: 'easy',
+  points_record: 46,
+  point_average: 19.5,
+  photo: 'https://www.aarp.org/content/dam/aarp/entertainment/television/2022/04/1140-magic-johnson-lakers.jpg'
+)
+
+Player.create(
+  first_name: 'Hakeem',
+  last_name: 'Olajuwon',
+  birth_year: '1963',
+  level: 'easy',
+  points_record: 52,
+  point_average: 21.8,
+  photo: 'https://cdn.artphotolimited.com/images/60913d60bd40b85323893a87/1000x1000/hakeem-olajuwon-von-den-houston-rockets.jpg'
+)
+
+Player.create(
+  first_name: 'Dirk',
+  last_name: 'Nowitzki',
+  birth_year: '1978',
+  level: 'easy',
+  points_record: 53,
+  point_average: 20.7,
+  photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/DirkNowitzki.jpg/220px-DirkNowitzki.jpg'
+)
+
+
+# _____________________________ Players Medium _____________________________
+
+Player.create(
+  first_name: 'Mikal',
+  last_name: 'Bridges',
+  birth_year: '1996',
+  level: 'medium',
+  points_record: 45,
+  point_average: 13.6,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628969.png'
+)
+
+Player.create(
+  first_name: 'Jalen',
+  last_name: 'Brunson',
+  birth_year: '1996',
+  level: 'medium',
+  points_record: 48,
+  point_average: 16.2,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628973.png'
+)
+
+Player.create(
+  first_name: 'Dejounte',
+  last_name: 'Murray',
+  birth_year: '1996',
+  level: 'medium',
+  points_record: 39,
+  point_average: 15.3,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1627749.png'
+)
+
+Player.create(
+  first_name: 'Tyrese',
+  last_name: 'Maxey',
+  birth_year: '2000',
+  level: 'medium',
+  points_record: 50,
+  point_average: 17.8,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630178.png'
+)
+
+Player.create(
+  first_name: 'Desmond',
+  last_name: 'Bane',
+  birth_year: '1998',
+  level: 'medium',
+  points_record: 38,
+  point_average: 16.3,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630217.png'
+)
+
+Player.create(
+  first_name: 'OG',
+  last_name: 'Anunoby',
+  birth_year: '1997',
+  level: 'medium',
+  points_record: 36,
+  point_average: 12.3,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628384.png'
+)
+
+Player.create(
+  first_name: 'Malcolm',
+  last_name: 'Brogdon',
+  birth_year: '1992',
+  level: 'medium',
+  points_record: 36,
+  point_average: 15.4,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1627763.png'
+)
+
+Player.create(
+  first_name: 'Derrick',
+  last_name: 'White',
+  birth_year: '1994',
+  level: 'medium',
+  points_record: 36,
+  point_average: 13.4,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628401.png'
+)
+
+Player.create(
+  first_name: 'Kyle',
+  last_name: 'Kuzma',
+  birth_year: '1995',
+  level: 'medium',
+  points_record: 41,
+  point_average: 15.1,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628398.png'
+)
+
+
+Player.create(
+  first_name: 'Jaren',
+  last_name: 'Jackson Jr',
+  birth_year: '1999',
+  level: 'medium',
+  points_record: 43,
+  point_average: 16.0,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628991.png'
+)
+
+Player.create(
+  first_name: 'Julius',
+  last_name: 'Randle',
+  birth_year: '1994',
+  level: 'medium',
+  points_record: 46,
+  point_average: 18.3,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628022.png'
+)
+
+Player.create(
+  first_name: 'Jordan',
+  last_name: 'Poole',
+  birth_year: '1999',
+  level: 'medium',
+  points_record: 43,
+  point_average: 15.8,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629673.png'
+)
+
+Player.create(
+  first_name: 'Tyler',
+  last_name: 'Herro',
+  birth_year: '2000',
+  level: 'medium',
+  points_record: 41,
+  point_average: 15.4,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629639.png'
+)
+
+# _____________________________ Players Hard _____________________________
+
+Player.create(
+  first_name: 'Patrick',
+  last_name: 'Beverley',
+  birth_year: '1988',
+  level: 'hard',
+  points_record: 26,
+  point_average: 8.8,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/201976.png'
+)
+
+Player.create(
+  first_name: 'Bruce',
+  last_name: 'Brown',
+  birth_year: '1996',
+  level: 'hard',
+  points_record: 29,
+  point_average: 9.3,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628971.png'
+)
+
+Player.create(
+  first_name: 'PJ',
+  last_name: 'Tucker',
+  birth_year: '1985',
+  level: 'hard',
+  points_record: 24,
+  point_average: 7.1,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/200782.png'
+)
+
+Player.create(
+  first_name: 'Royce',
+  last_name: 'O\'Neale',
+  birth_year: '1993',
+  level: 'hard',
+  points_record: 29,
+  point_average: 8.6,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1626220.png'
+)
+
+Player.create(
+  first_name: 'Jae',
+  last_name: 'Crowder',
+  birth_year: '1990',
+  level: 'hard',
+  points_record: 30,
+  point_average: 9.6,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203109.png'
+)
+
+Player.create(
+  first_name: 'Reggie',
+  last_name: 'Bullock',
+  birth_year: '1991',
+  level: 'hard',
+  points_record: 33,
+  point_average: 10.7,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203493.png'
+)
+
+Player.create(
+  first_name: 'Monte',
+  last_name: 'Morris',
+  birth_year: '1995',
+  level: 'hard',
+  points_record: 28,
+  point_average: 10.5,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628420.png'
+)
+
+Player.create(
+  first_name: 'Maxi',
+  last_name: 'Kleber',
+  birth_year: '1992',
+  level: 'hard',
+  points_record: 26,
+  point_average: 7.5,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628467.png'
+)
+
+Player.create(
+  first_name: 'Jakob',
+  last_name: 'Poeltl',
+  birth_year: '1995',
+  level: 'hard',
+  points_record: 31,
+  point_average: 8.4,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1627751.png'
+)
+
+Player.create(
+  first_name: 'Daniel',
+  last_name: 'Theis',
+  birth_year: '1992',
+  level: 'hard',
+  points_record: 25,
+  point_average: 8.2,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628464.png'
+)
+
+# _____________________________ Players Legend _____________________________
+
+Player.create(
+  first_name: 'Arvydas',
+  last_name: 'Sabonis',
+  birth_year: '1964',
+  level: 'legend',
+  points_record: 36,
+  point_average: 12.0,
+  photo: 'https://cdn.basketballnetwork.net/image/fetch/c_fill,f_auto,h_600,q_auto,w_600/https://basketballnetwork.net/.image/t_share/MTkzNzYwNjk2NDY2NzgxNDkz/image-placeholder-title.webp'
+)
+
+Player.create(
+  first_name: 'Drazen',
+  last_name: 'Petrovic',
+  birth_year: '1964',
+  level: 'legend',
+  points_record: 44,
+  point_average: 15.4,
+  photo: 'https://cdn.vox-cdn.com/thumbor/gJOJGdJziF8GDJgIzfVSzyL5Tmo=/0x0:2504x3339/1200x800/filters:focal(1021x1499:1409x1887)/cdn.vox-cdn.com/uploads/chorus_image/image/69798112/1163329572.0.jpg'
+)
+
+Player.create(
+  first_name: 'Robert',
+  last_name: 'Horry',
+  birth_year: '1970',
+  level: 'legend',
+  points_record: 34,
+  point_average: 7.0,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1091.png'
+)
+
+Player.create(
+  first_name: 'Latrell',
+  last_name: 'Sprewell',
+  birth_year: '1970',
+  level: 'legend',
+  points_record: 50,
+  point_average: 18.3,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/84.png'
+)
+
+Player.create(
+  first_name: 'Brent',
+  last_name: 'Barry',
+  birth_year: '1971',
+  level: 'legend',
+  points_record: 31,
+  point_average: 9.3,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/360.png'
+)
+
+Player.create(
+  first_name: 'Steve',
+  last_name: 'Smith',
+  birth_year: '1969',
+  level: 'legend',
+  points_record: 36,
+  point_average: 14.3,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1094.png'
+)
+
+Player.create(
+  first_name: 'Vlade',
+  last_name: 'Divac',
+  birth_year: '1968',
+  level: 'legend',
+  points_record: 32,
+  point_average: 11.8,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1124.png'
+)
+
+Player.create(
+  first_name: 'Mark',
+  last_name: 'Jackson',
+  birth_year: '1965',
+  level: 'legend',
+  points_record: 32,
+  point_average: 9.6,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/349.png'
+)
+
+Player.create(
+  first_name: 'Mookie',
+  last_name: 'Blaylock',
+  birth_year: '1967',
+  level: 'legend',
+  points_record: 38,
+  point_average: 13.5,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/341.png'
+)
+
+Player.create(
+  first_name: 'Detlef',
+  last_name: 'Schrempf',
+  birth_year: '1963',
+  level: 'legend',
+  points_record: 34,
+  point_average: 13.9,
+  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/782.png'
+)
+
 
 PHOTO = {
   1 => "app/assets/images/avatars/avatar_1.webp",

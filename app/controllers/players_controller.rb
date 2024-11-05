@@ -4,6 +4,21 @@ class PlayersController < ApplicationController
     render json: @ten_random_easy_players
   end
 
+  def game_of_ten_medium
+    @ten_random_easy_players = Player.where(level: 'medium').sample(10)
+    render json: @ten_random_easy_players
+  end
+
+  def game_of_ten_hard
+    @ten_random_easy_players = Player.where(level: 'hard').sample(10)
+    render json: @ten_random_easy_players
+  end
+
+  def game_of_ten_legend
+    @ten_random_easy_players = Player.where(level: 'legend').sample(10)
+    render json: @ten_random_easy_players
+  end
+
   def new
     @player = Player.new
   end

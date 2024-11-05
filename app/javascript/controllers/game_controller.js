@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="game"
 export default class extends Controller {
   static targets = ["playerImage", "playerInput", "checkButton", "progressGameBar", "questionNumber", "answer", "scoreVisual", "score", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "returnButton", "timer"];
+  static values = { level: String };
 
   connect() {
     console.log("hello game");
@@ -16,7 +17,18 @@ export default class extends Controller {
   }
 
   async loadGame() {
-    const response = await fetch(`http://localhost:3000/ten_players`);
+    let apiUrl;
+    if (this.levelValue === "easy") {
+      apiUrl = `http://localhost:3000/ten_players_easy`;
+    } else if (this.levelValue === "medium") {
+      apiUrl = `http://localhost:3000/ten_players_medium`;
+    } else if (this.levelValue === "hard") {
+      apiUrl = `http://localhost:3000/ten_players_hard`;
+    } else if (this.levelValue === "legend") {
+      apiUrl = `http://localhost:3000/ten_players_legend`;
+    }
+
+    const response = await fetch(apiUrl)
     this.players = await response.json();
     console.log(this.players);
     this.showNextPlayer();
@@ -81,6 +93,18 @@ export default class extends Controller {
     const player = this.players[this.currentQuestion];
     const userAnswer = this.playerInputTarget.value.replace(/[^a-zA-Z]/g, '').toLowerCase();
     const correctAnswer = `${player.first_name.toLowerCase()}${player.last_name.toLowerCase()}`;
+
+    let pointsValue;
+
+    if (this.levelValue === "easy") {
+      pointsValue = 10;
+    } else if (this.levelValue === "medium") {
+      pointsValue = 30;
+    } else if (this.levelValue === "hard") {
+      pointsValue = 50;
+    } else if (this.levelValue === "legend") {
+      pointsValue = 100;
+    }
 
     if (userAnswer === correctAnswer) {
       const newScore = this.score + 10;
