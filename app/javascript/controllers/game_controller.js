@@ -79,8 +79,8 @@ export default class extends Controller {
 
   checkAnswer() {
     const player = this.players[this.currentQuestion];
-    const userAnswer = this.playerInputTarget.value.trim().toLowerCase();
-    const correctAnswer = `${player.first_name.toLowerCase()} ${player.last_name.toLowerCase()}`;
+    const userAnswer = this.playerInputTarget.value.replace(/[^a-zA-Z]/g, '').toLowerCase();
+    const correctAnswer = `${player.first_name.toLowerCase()}${player.last_name.toLowerCase()}`;
 
     if (userAnswer === correctAnswer) {
       const newScore = this.score + 10;
