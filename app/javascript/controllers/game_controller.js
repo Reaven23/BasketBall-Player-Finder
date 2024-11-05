@@ -177,7 +177,7 @@ export default class extends Controller {
     endButton.classList.remove("d-none")
     const modal = new bootstrap.Modal(document.getElementById('endGameModal'));
     const modalMessage = document.getElementById("modalMessage");
-    modalMessage.textContent = `Jeu terminé! Votre score est de ${this.score} point${this.score > 0 ? 's' : ''}`;
+    modalMessage.textContent = `${this.score} point${this.score > 0 ? 's' : ''}`;
     modal.show();
   }
 

@@ -3,15 +3,16 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="endGameModalLabel">Fin de la Partie</h5>
+        <h2 class="modal-title text-center" id="endGameModalLabel">Fin de la Partie</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <p id="modalMessage"></p>
+      <div class="modal-body text-center">
+        <p>Jeu terminé! Votre score est de <span id="modalMessage"></span>!</p>
+
       </div>
-      <div class="modal-footer">
-        <a href="/" class="btn btn-primary">Retour à l'accueil</a>
-        <%= link_to "Jouer à nouveau", start_easy_game_path %>
+      <div class="modal-footer d-flex align-items-end">
+        <%= link_to "Jouer à nouveau", start_easy_game_path, class:"btn" %>
+        <a href="/" class="btn-small">Retour à l'accueil</a>
       </div>
     </div>
   </div>
@@ -54,7 +55,7 @@
 
       <div class="player-in">
         <input data-action="keydown->game#handleKeyDown" data-game-target="playerInput" type="text" id="player-input" placeholder="Entrez votre réponse">
-        <%= link_to "Retour Acceuil", root_path, class: "d-none return-button" %>
+        <%= link_to "Retour Acceuil", root_path, class: "d-none return-button btn" %>
       </div>
     </div>
 
