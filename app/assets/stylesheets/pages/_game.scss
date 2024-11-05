@@ -79,7 +79,7 @@
   color: white;
 
 }
-
+////////////////////////////////////////////______TIMER_____///////////////////////////////
 .player-image {
   height: 60%;
   overflow: hidden;
@@ -87,15 +87,54 @@
   margin-right: auto;
   display: flex;
   justify-content: center;
+  position: relative;
 }
+
 
 #image {
   max-width: 80%;
   min-height: 80%;
-
   object-fit: cover;
   border-radius: 10%;
+  transition: border 0.5s ease-in-out;
+  z-index: 1;
+  position: relative;
 }
+
+.timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(244, 152, 5, 0.7);
+  padding: 10px 20px;
+  border-radius: 50%;
+  z-index: 2;
+  text-align: center;
+  animation: blink 1s infinite;
+}
+
+.blink {
+  animation: blink-animation 0.5s ease;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.clock {
+  font-size: 8rem;
+}
+
+
 
 .player-input {
   height: 10%;
@@ -140,7 +179,7 @@
   font-family: "Luckiest Guy", cursive;
 }
 
-
+////////////////////////////////////////////______SCORE_____///////////////////////////////
 .score-title {
   font-size: 3vw;
   font-family: "Luckiest Guy", cursive;
@@ -154,22 +193,18 @@
   font-family: "Luckiest Guy", cursive;
   display: flex;
   justify-content: center;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-// .visual {
-//   position: absolute;
-//   left: -9999px;
-//   /* Déplace l'élément hors de la zone visible */
-//   top: -9999px;
+.score-points.animated {
+  transform: scale(1.3);
+  color: #faa810; /* Couleur or pour donner un effet visuel de gain */
+}
 
-
-
-//   .img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//   }
-// }
+.score-points.wrong {
+  transform: scale(1.3); /* Le score grandit temporairement */
+  color: red; /* Devient rouge */
+}
 
 .img-container {
   height: 60%;

@@ -2,13 +2,15 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="game"
 export default class extends Controller {
-  static targets = ["playerImage", "playerInput", "checkButton", "progressGameBar", "questionNumber", "answer", "scoreVisual", "score", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "returnButton"];
+  static targets = ["playerImage", "playerInput", "checkButton", "progressGameBar", "questionNumber", "answer", "scoreVisual", "score", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "returnButton", "timer"];
 
   connect() {
     console.log("hello game");
     this.currentQuestion = 0;
     this.score = 0;
     this.players = [];
+    this.timeLimit = 14;
+    this.timeRemaining = this.timeLimit;
     console.log(this.currentQuestion);
     this.loadGame();
   }
@@ -21,13 +23,51 @@ export default class extends Controller {
   }
 
   showNextPlayer() {
+    this.resetTimer();
     if (this.currentQuestion < this.players.length) {
       const player = this.players[this.currentQuestion];
       this.playerImageTarget.src = player.photo;
       this.questionNumberTarget.innerText = `Joueur ${this.currentQuestion + 1}/10`;
       this.playerInputTarget.value = "";
+      this.startTimer();
     } else {
       this.endGame();
+    }
+  }
+
+  startTimer() {
+    this.timeRemaining = this.timeLimit;
+    this.updateTimerVisual();
+
+    this.timerInterval = setInterval(() => {
+      this.timeRemaining--;
+      this.updateTimerVisual();
+
+      if (this.timeRemaining <= 0) {
+        clearInterval(this.timerInterval);
+        this.checkAnswer();
+      }
+    }, 1000);
+  }
+
+  resetTimer() {
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+    }
+    this.timeRemaining = this.timeLimit;
+    this.updateTimerVisual();
+  }
+
+  updateTimerVisual() {
+    const percentage = (this.timeRemaining / this.timeLimit) * 100;
+    this.playerImageTarget.style.border = `8px solid rgba(2244, 152, 5, ${(100 - percentage) / 100})`;
+
+    if (this.hasTimerTarget) {
+      this.timerTarget.textContent = `${this.timeRemaining}`;
+      this.timerTarget.classList.add('blink');
+      setTimeout(() => {
+        this.timerTarget.classList.remove('blink');
+      }, 500);
     }
   }
 
@@ -43,20 +83,22 @@ export default class extends Controller {
     const correctAnswer = `${player.first_name.toLowerCase()} ${player.last_name.toLowerCase()}`;
 
     if (userAnswer === correctAnswer) {
-      this.score += 10;
-      console.log(this.score);
+      const newScore = this.score + 10;
+      this.animateScoreUpdate(newScore);
+      this.score = newScore;
       this.updateScoreVisual(true);
     } else {
+      this.animateWrongAnswer();
       this.updateScoreVisual(false);
     }
-    const bar = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
+
+    const bar = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
     this[bar[this.currentQuestion] + "Target"].classList.add('orange');
     this.currentQuestion++;
     this.showNextPlayer();
   }
 
   updateScoreVisual(correct) {
-    console.log(correct);
     if (correct) {
       this.scoreVisualTarget.innerHTML = `
       <div class="checked">
@@ -66,18 +108,42 @@ export default class extends Controller {
     `;
     this.scoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
   } else {
-    console.log("hello false");
     this.scoreVisualTarget.innerHTML = `
       <div class="crossed">
         <div class="img-container"><img src="/assets/crossed.png" alt="my image" id="image-score" class=""></div>
         <div class="score-message">C'est nul, essaie encore!</div>
       </div>
     `;
-      console.log(this.scoreVisualTarget.innerHTML);
       this.scoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
     }
 
     this.scoreVisualTarget.classList.remove('d-none');
+  }
+
+  animateScoreUpdate(newScore) {
+    const currentScore = parseInt(this.scoreTarget.textContent) || 0;
+    const increment = newScore > currentScore ? 1 : -1;
+
+    let currentDisplayedScore = currentScore;
+
+    this.scoreTarget.classList.add('animated');
+
+    const interval = setInterval(() => {
+      currentDisplayedScore += increment;
+      this.scoreTarget.textContent = `${currentDisplayedScore} point${currentDisplayedScore > 1 ? 's' : ''}`;
+
+      if (currentDisplayedScore === newScore) {
+        clearInterval(interval);
+        this.scoreTarget.classList.remove('animated');
+      }
+    }, 50);
+  }
+
+  animateWrongAnswer() {
+    this.scoreTarget.classList.add('wrong');
+    setTimeout(() => {
+      this.scoreTarget.classList.remove('wrong');
+    }, 600);
   }
 
   postScore() {
