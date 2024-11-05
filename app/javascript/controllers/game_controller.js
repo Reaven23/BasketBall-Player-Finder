@@ -107,7 +107,7 @@ export default class extends Controller {
     }
 
     if (userAnswer === correctAnswer) {
-      const newScore = this.score + 10;
+      const newScore = this.score + pointsValue;
       this.animateScoreUpdate(newScore);
       this.score = newScore;
       this.updateScoreVisual(true);

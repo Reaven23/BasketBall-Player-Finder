@@ -106,7 +106,7 @@ Player.create(
 
 Player.create(
   first_name: 'Shaquille',
-  last_name: 'O\'Neal',
+  last_name: 'ONeal',
   birth_year: '1972',
   level: 'easy',
   points_record: 61,
@@ -332,7 +332,7 @@ Player.create(
 
 Player.create(
   first_name: 'Royce',
-  last_name: 'O\'Neale',
+  last_name: 'ONeale',
   birth_year: '1993',
   level: 'hard',
   points_record: 29,

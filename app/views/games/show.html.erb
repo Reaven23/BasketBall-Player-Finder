@@ -11,7 +11,7 @@
 
       </div>
       <div class="modal-footer d-flex align-items-end">
-        <%= link_to "Jouer à nouveau", start_easy_game_path, class:"btn" %>
+        <%= link_to "Jouer à nouveau", start_game_path_for(@game), class:"btn" %>
         <a href="/" class="btn-small">Retour à l'accueil</a>
       </div>
     </div>
@@ -22,11 +22,11 @@
 <div class="page-container">
   <div class="game-title">
     <div class="game-number">
-      <%= Game.find(params[:id]).name  %>
+      <%= @game.name  %>
     </div>
   </div>
 
-  <div data-controller='game' class=" game-container" data-game-level-value="<%= Game.find(params[:id]).level %>">
+  <div data-controller='game' class=" game-container" data-game-level-value="<%= @game.level %>">
     <div class="game-flow d-flex flex-column align-items-center justify-content-around">
       <div class="game-progress">
         <div data-game-target='questionNumber' class="question-number d-flex flex-column justify-content-center">Joueur 1/10</div>
