@@ -14,9 +14,4 @@ class GamesController < ApplicationController
     end
   end
 
-  def leaderboard
-  end
-
-  def mode_choice
-  end
 end
