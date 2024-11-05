@@ -118,6 +118,5 @@ export default class extends Controller {
   endGame() {
     this.playerInputTarget.classList.add('d-none');
     this.postScore()
-    // alert(`Jeu terminé! Votre score est de ${this.score} point${this.score > 0 ? 's' : ''}`);
   }
 }

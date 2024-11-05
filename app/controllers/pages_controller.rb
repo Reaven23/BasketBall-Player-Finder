@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def rankings
-    @users_sorted_by_score = User.all.order(points: :desc)
+    @users_sorted_by_score = User.all.order(Arel.sql('COALESCE(points, 0) DESC'))
   end
 
   def contact
