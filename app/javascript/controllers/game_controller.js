@@ -30,7 +30,6 @@ export default class extends Controller {
 
     const response = await fetch(apiUrl)
     this.players = await response.json();
-    console.log(this.players);
     this.showNextPlayer();
   }
 
