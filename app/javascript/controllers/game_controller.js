@@ -123,24 +123,10 @@ export default class extends Controller {
 
   updateScoreVisual(correct) {
     if (correct) {
-      this.scoreVisualTarget.innerHTML = `
-      <div class="checked">
-        <div class="img-container"><img src="/assets/checked.png" alt="" id="image-score" class=""></div>
-        <div class="score-message">C'est fort, bravo!</div>
-      </div>
-    `;
-    this.scoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
+      this.scoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
   } else {
-    this.scoreVisualTarget.innerHTML = `
-      <div class="crossed">
-        <div class="img-container"><img src="/assets/crossed.png" alt="my image" id="image-score" class=""></div>
-        <div class="score-message">C'est nul, essaie encore!</div>
-      </div>
-    `;
       this.scoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
     }
-
-    this.scoreVisualTarget.classList.remove('d-none');
   }
 
   animateScoreUpdate(newScore) {
