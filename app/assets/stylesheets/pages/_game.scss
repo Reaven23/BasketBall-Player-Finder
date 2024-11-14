@@ -61,6 +61,10 @@
 }
 
 .game-score {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 2em;
   width: 20%;
   backdrop-filter: blur(3px) saturate(0%);
   -webkit-backdrop-filter: blur(3px) saturate(0%);
@@ -87,7 +91,6 @@
   margin-right: auto;
   display: flex;
   justify-content: center;
-  position: relative;
 }
 
 
@@ -97,19 +100,12 @@
   object-fit: cover;
   border-radius: 10%;
   transition: border 0.5s ease-in-out;
-  z-index: 1;
-  position: relative;
 }
 
 .timer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: rgba(244, 152, 5, 0.7);
   padding: 10px 20px;
   border-radius: 50%;
-  z-index: 2;
   text-align: center;
   animation: blink 1s infinite;
 }
@@ -131,9 +127,10 @@
 }
 
 .clock {
-  font-size: 8rem;
+  font-size: 8rem; /* Ajustez en fonction des besoins */
+  line-height: 1;
+  text-align: center;
 }
-
 
 
 .player-input {
@@ -306,6 +303,8 @@
 
   .score-phone {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
 
@@ -339,11 +338,6 @@
     font-size: 3vw;
   }
 
-  .score-visual {
-    width: 20%;
-    height: 50%;
-  }
-
   .score-phone {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -352,11 +346,6 @@
 }
 
 @media (max-width: 550px) {
-  .score-visual {
-    width: 50%;
-    height: 50%;
-  }
-
   .score-title {
     font-size: 6vw;
   }

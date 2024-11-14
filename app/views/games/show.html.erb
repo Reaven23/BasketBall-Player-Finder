@@ -51,24 +51,18 @@
       </div>
 
       <div class="player-in">
-        <input data-action="keydown->game#handleKeyDown" data-game-target="playerInput" type="text" id="player-input" placeholder="Entrez votre réponse">
+        <input data-action="keydown->game#handleKeyDown" data-game-target="playerInput" type="text" id="player-input" placeholder="Entrez votre réponse" autocomplete="off">
         <%= link_to "Retour Acceuil", root_path, class: "d-none return-button btn" %>
       </div>
     </div>
 
     <div class="game-score">
       <div class="score-title">SCORE</div>
-      <div class='score-phone'>
-        <div class="timer">
-          <span data-game-target="timer" class="clock"></span>
-        </div>
-        <div data-game-target='score' class="score-points"></div>
+      <div class="timer">
+        <span data-game-target="timer" class="clock"></span>
       </div>
+      <div data-game-target='score' class="score-points"></div>
     </div>
 
   </div>
-    <%# <div class="btn-home start-game mt-3">
-          <h2>START</h2>
-    </div> %>
-
 </div>

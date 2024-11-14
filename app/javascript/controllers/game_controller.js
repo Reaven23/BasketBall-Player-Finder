@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="game"
 export default class extends Controller {
-  static targets = ["playerImage", "playerInput", "checkButton", "progressGameBar", "questionNumber", "answer", "scoreVisual", "score", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "returnButton", "timer"];
+  static targets = ["playerImage", "playerInput", "checkButton", "progressGameBar", "questionNumber", "answer", "score", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "returnButton", "timer"];
   static values = { level: String };
 
   connect() {
