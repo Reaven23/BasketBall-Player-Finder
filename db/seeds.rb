@@ -519,6 +519,7 @@ PHOTO = {
 puts "10 nba easy Players created"
 puts "creating 10 USERS"
 User.destroy_all
+puts "All users deleted"
 
 user1 = User.create!(
   email: "ad.regis@gmail.com",
