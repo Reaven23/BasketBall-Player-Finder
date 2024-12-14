@@ -1779,16 +1779,6 @@ Player.create(
 
 
 Player.create(
-  first_name: 'Matt',
-  last_name: 'Ryan',
-  birth_year: '1997',
-  level: 'legend',
-  points_record: 20,
-  point_average: 5.5,
-  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630334.png'
-)
-
-Player.create(
   first_name: 'Chris',
   last_name: 'Boucher',
   birth_year: '1993',
@@ -1865,17 +1855,6 @@ Player.create(
   points_record: 14,
   point_average: 4.7,
   photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1631212.png'
-)
-
-
-Player.create(
-  first_name: 'Ausar',
-  last_name: 'Thompson',
-  birth_year: '2003',
-  level: 'legend',
-  points_record: 28,
-  point_average: 9.0,
-  photo: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1640615.png'
 )
 
 Player.create(
