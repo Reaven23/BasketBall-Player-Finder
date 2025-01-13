@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="game"
 export default class extends Controller {
-  static targets = ["playerImage", "playerInput", "checkButton", "progressGameBar", "questionNumber", "answer", "score", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "returnButton", "timer"];
+  static targets = ["playerImage", "playerInput", "checkButton", "progressGameBar", "questionNumber", "answer", "mobileScore", "score", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "returnButton", "timer", "mobileTimer"];
   static values = { level: String };
 
   connect() {
@@ -73,12 +73,22 @@ export default class extends Controller {
     const percentage = (this.timeRemaining / this.timeLimit) * 100;
     this.playerImageTarget.style.border = `8px solid rgba(2244, 152, 5, ${(100 - percentage) / 100})`;
 
-    if (this.hasTimerTarget) {
-      this.timerTarget.textContent = `${this.timeRemaining}`;
-      this.timerTarget.classList.add('blink');
-      setTimeout(() => {
-        this.timerTarget.classList.remove('blink');
-      }, 500);
+    if (window.innerWidth >= 1024) {
+      if (this.hasTimerTarget) {
+        this.timerTarget.textContent = `${this.timeRemaining}`;
+        this.timerTarget.classList.add('blink');
+        setTimeout(() => {
+          this.timerTarget.classList.remove('blink');
+        }, 500);
+      }
+    } else {
+      if (this.hasMobileTimerTarget) {
+        this.mobileTimerTarget.textContent = `${this.timeRemaining}`;
+        this.mobileTimerTarget.classList.add('blink');
+        setTimeout(() => {
+          this.mobileTimerTarget.classList.remove('blink');
+        }, 500);
+      }
     }
   }
 
@@ -122,37 +132,72 @@ export default class extends Controller {
   }
 
   updateScoreVisual(correct) {
-    if (correct) {
-      this.scoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
-  } else {
-      this.scoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
+    if (window.innerWidth >= 1024) {
+      if (correct) {
+        this.scoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
+      } else {
+        this.scoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
+      }
+    } else {
+      if (correct) {
+        this.mobileScoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
+      } else {
+        this.mobileScoreTarget.innerHTML = `${this.score} point${this.score > 0 ? 's' : ''}`
+      }
     }
   }
 
+
   animateScoreUpdate(newScore) {
-    const currentScore = parseInt(this.scoreTarget.textContent) || 0;
-    const increment = newScore > currentScore ? 1 : -1;
+    if (window.innerWidth >= 1024) {
+      const currentScore = parseInt(this.scoreTarget.textContent) || 0;
+      const increment = newScore > currentScore ? 1 : -1;
 
-    let currentDisplayedScore = currentScore;
+      let currentDisplayedScore = currentScore;
 
-    this.scoreTarget.classList.add('animated');
+      this.scoreTarget.classList.add('animated');
 
-    const interval = setInterval(() => {
-      currentDisplayedScore += increment;
-      this.scoreTarget.textContent = `${currentDisplayedScore} point${currentDisplayedScore > 1 ? 's' : ''}`;
+      const interval = setInterval(() => {
+        currentDisplayedScore += increment;
+        this.scoreTarget.textContent = `${currentDisplayedScore} point${currentDisplayedScore > 1 ? 's' : ''}`;
 
-      if (currentDisplayedScore === newScore) {
-        clearInterval(interval);
-        this.scoreTarget.classList.remove('animated');
-      }
-    }, 50);
+        if (currentDisplayedScore === newScore) {
+          clearInterval(interval);
+          this.scoreTarget.classList.remove('animated');
+        }
+      }, 50);
+    } else {
+      const currentScore = parseInt(this.mobileScoreTarget.textContent) || 0;
+      const increment = newScore > currentScore ? 1 : -1;
+
+      let currentDisplayedScore = currentScore;
+
+      this.mobileScoreTarget.classList.add('animated');
+
+      const interval = setInterval(() => {
+        currentDisplayedScore += increment;
+        this.mobileScoreTarget.textContent = `${currentDisplayedScore} point${currentDisplayedScore > 1 ? 's' : ''}`;
+
+        if (currentDisplayedScore === newScore) {
+          clearInterval(interval);
+          this.mobileScoreTarget.classList.remove('animated');
+        }
+      }, 50);
+    }
   }
 
   animateWrongAnswer() {
-    this.scoreTarget.classList.add('wrong');
-    setTimeout(() => {
-      this.scoreTarget.classList.remove('wrong');
-    }, 600);
+    if (window.innerWidth >= 1024) {
+      this.scoreTarget.classList.add('wrong');
+      setTimeout(() => {
+        this.scoreTarget.classList.remove('wrong');
+      }, 600);
+    } else {
+      this.mobileScoreTarget.classList.add('wrong');
+      setTimeout(() => {
+        this.mobileScoreTarget.classList.remove('wrong');
+      }, 600);
+    }
   }
 
   postScore() {
