@@ -1,0 +1,62 @@
+/* ✅ Style général de la modale */
+.modal-content {
+  background-color: #1c1c1e;
+  color: #ffffff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* ✅ Titre de la modale */
+.modal-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* ✅ Corps de la modale */
+.modal-body p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* ✅ Boutons */
+.modal-footer .btn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.modal-footer .btn-primary {
+  background-color: #28a745;
+  border: none;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #dc3545;
+  border: none;
+}
+
+/* ✅ Responsive: ajustement sur petits écrans */
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-body p {
+    font-size: 1rem;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+  }
+
+  .modal-footer .btn {
+    margin-bottom: 0.5rem;
+  }
+}

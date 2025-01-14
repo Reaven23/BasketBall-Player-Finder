@@ -1,18 +1,103 @@
+// .navbar {
+//   height: 12vh;
+//   border-radius: 20px;
+//   position: relative;
+//   z-index: 20;
+// }
+
+// .navbar a {
+//   color: rgb(248, 154, 14);
+// }
+
+// .navbar-brand {
+//   font-size: 2em;
+// }
+
+// .navbar-dark.bg-dark {
+// background-color: rgba(43, 42, 42, 0.8)!important;
+// }
+
+/* Style général de la navbar */
 .navbar {
   height: 12vh;
-  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
   position: relative;
   z-index: 20;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+/* Logo agrandi mais contenu dans son espace */
+.logo-img {
+  height: 20vh;
+  position: relative;
+  z-index: 10; /* En dessous des liens */
+  transition: transform 0.3s ease;
+}
+
+/* Effet de zoom au survol */
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Liens de navigation en avant-plan */
+.navbar-nav .nav-link {
+  position: relative;
+  z-index: 20; /* Plus haut que le logo */
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: rgb(248, 154, 14);
+}
+
+
+/* Couleur des liens */
 .navbar a {
   color: rgb(248, 154, 14);
 }
 
-.navbar-brand {
-  font-size: 2em;
+/* Background avec transparence */
+.navbar-dark.bg-dark {
+  background-color: rgba(43, 42, 42, 0.8) !important;
 }
 
-.navbar-dark.bg-dark {
-background-color: rgba(43, 42, 42, 0.8)!important;
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 1024px) {
+  .navbar {
+    height: auto;
+  }
+
+  .logo-img {
+    height: 18vh;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Media Queries pour les très petits écrans */
+@media (max-width: 576px) {
+  .logo-img {
+    height: 14vh;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.8rem;
+  }
 }
