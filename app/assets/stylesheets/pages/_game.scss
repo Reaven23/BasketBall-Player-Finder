@@ -2,6 +2,10 @@
   height: 500px;
 }
 
+.game-score-phone {
+  display: none;
+}
+
 
 .page-container {
   min-height: 100vh;
@@ -384,6 +388,7 @@
 
   .game-score-phone {
     margin-top: 1px;
+    display: flex;
   }
 
 }

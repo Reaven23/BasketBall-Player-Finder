@@ -1,22 +1,22 @@
 <!------------------------ MODALE FIN DE GAME ---------------------------------------->
 <div class="modal fade" id="endGameModal" tabindex="-1" aria-labelledby="endGameModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h2 class="modal-title text-center" id="endGameModalLabel">Fin de la Partie</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        <p>Jeu terminé! Votre score est de <span id="modalMessage"></span>!</p>
-
+        <p>🎉 Jeu terminé ! Votre score est de <span id="modalMessage"></span> !</p>
       </div>
-      <div class="modal-footer d-flex align-items-end">
-        <%= link_to "Jouer à nouveau", start_game_path_for(@game), class:"btn" %>
-        <a href="/" class="btn-small">Retour à l'accueil</a>
+      <div class="modal-footer d-flex flex-column flex-md-row justify-content-center align-items-center">
+        <%= link_to "🔄 Rejouer", start_game_path_for(@game), class: "btn btn-primary mb-2 mb-md-0 mx-md-2" %>
+        <a href="/" class="btn btn-secondary">🏠 Retour à l'accueil</a>
       </div>
     </div>
   </div>
 </div>
+
 
 
 <div class="page-container">
@@ -64,7 +64,7 @@
       <div data-game-target='score' class="score-points"></div>
     </div>
 
-    <div class="game-score-phone d-flex">
+    <div class="game-score-phone">
       <div class="score-phone">
         <div class="score-title">SCORE</div>
         <div data-game-target='mobileScore' class="score-points"></div>
