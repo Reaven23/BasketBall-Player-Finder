@@ -8,6 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   after_commit :attach_selected_avatar, on: [:create, :update]
+  after_initialize :set_available_games, if: :new_record?
 
   private
 
@@ -16,5 +17,9 @@ class User < ApplicationRecord
       avatar_path = Rails.root.join("app/assets/images/avatars/#{selected_avatar}.webp")
       photo.attach(io: File.open(avatar_path), filename: "#{selected_avatar}.webp", content_type: 'image/webp')
     end
+  end
+
+  def set_available_games
+    self.available_games ||= 5
   end
 end

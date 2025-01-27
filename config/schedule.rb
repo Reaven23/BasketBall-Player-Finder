@@ -12,7 +12,7 @@ set :output, "log/cron.log"
 
 # Planifier la réinitialisation quotidienne
 every 1.day, at: '00:00 am' do
-  runner "User.update_all(available_games: 3)"
+  runner "User.where('available_games < ?', 5).update_all(available_games: 5)"
 end
 
 
