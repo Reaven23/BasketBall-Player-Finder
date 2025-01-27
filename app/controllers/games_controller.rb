@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  before_action :check_game_availability, only: [:start_easy_game, :start_medium_game, :start_hard_game, :start_legend_game]
+
   def new
     @game = Game.new
   end
@@ -63,6 +65,14 @@ class GamesController < ApplicationController
 
     num = JaroWinkler.similarity(correct_answer, user_answer)
     render json: { jaro_num: num.round(4) }
+  end
+
+  private
+
+  def check_game_availability
+    if current_user.available_games <= 0
+      redirect_to root_path, alert: "Vous avez atteint votre limite de parties pour aujourd'hui."
+    end
   end
 
 end

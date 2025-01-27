@@ -56,6 +56,8 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "cloudinary"
 gem "jaro_winkler"
+gem 'whenever', require: false
+
 
 
 group :development, :test do

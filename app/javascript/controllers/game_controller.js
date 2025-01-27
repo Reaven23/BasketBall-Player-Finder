@@ -19,13 +19,13 @@ export default class extends Controller {
   async loadGame() {
     let apiUrl;
     if (this.levelValue === "easy") {
-      apiUrl = `http://localhost:3000/ten_players_easy`;
+      apiUrl = `/ten_players_easy`;
     } else if (this.levelValue === "medium") {
-      apiUrl = `http://localhost:3000/ten_players_medium`;
+      apiUrl = `/ten_players_medium`;
     } else if (this.levelValue === "hard") {
-      apiUrl = `http://localhost:3000/ten_players_hard`;
+      apiUrl = `/ten_players_hard`;
     } else if (this.levelValue === "legend") {
-      apiUrl = `http://localhost:3000/ten_players_legend`;
+      apiUrl = `/ten_players_legend`;
     }
 
     const response = await fetch(apiUrl)

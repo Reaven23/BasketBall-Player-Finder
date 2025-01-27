@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  after_initialize set_avaiable_games, if: :new_record?
 
   def update_score
     @user = current_user
@@ -10,5 +11,11 @@ class UsersController < ApplicationController
     else
       render json: { status: 'error', message: @user.errors.full_messages.join(", ") }, status: :unprocessable_entity
     end
+  end
+
+  private
+
+  def set_avaiable_games
+    self.set_avaiable_games ||= 2
   end
 end
