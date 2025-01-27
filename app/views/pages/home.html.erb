@@ -2,80 +2,83 @@
 <div class="page-container-ok" data-controller="overlay">
   <%= render 'shared/navbar' %>
   <div class="overlay d-none" data-overlay-target="overlay"></div>
-
-  <div class="cards-container row">
-    <div class="easy-card col-sm-6 col-12 mb-4 d-flex justify-content-end">
-      <%= link_to start_easy_game_path, method: :post, class: 'text-deco' do %>
-      <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
-        <div class="card">
-          <div class="front-content">
-            <p>Rookie</p>
+  <div class="cards-cards">
+    <div class="cards-container row">
+      <div class="easy-card col-sm-6 col-12 mb-4 d-flex justify-content-end">
+        <%= link_to start_easy_game_path, method: :post, class: 'text-deco' do %>
+        <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
+          <div class="card">
+            <div class="front-content">
+              <p>Rookie</p>
+            </div>
+            <div class="content">
+              <p class="heading">Rookie</p>
+              <p>
+                Avec ce mode, tu ne gagneras que <strong>10 points</strong> par joueur trouvé, mais tu tomberas sur des joueurs plutôt connus et facilement reconnaissables! Attention aux fautes d'orthographe tout de même ! C'est pas donné à tout le monde d'épeler Antetokounmpo. Bon jeu et ne loupe pas tes LF !
+              </p>
+            </div>
           </div>
-          <div class="content">
-            <p class="heading">Rookie</p>
-            <p>
-              Avec ce mode, tu ne gagneras que <strong>10 points</strong> par joueur trouvé, mais tu tomberas sur des joueurs plutôt connus et facilement reconnaissables! Attention aux fautes d'orthographe tout de même ! C'est pas donné à tout le monde d'épeler Antetokounmpo. Bon jeu et ne loupe pas tes LF !
-            </p>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="medium-card col-sm-6 col-12 mb-4 d-flex justify-content-start">
+        <%= link_to start_medium_game_path, method: :post, class: 'text-deco' do %>
+        <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
+          <div class="card">
+            <div class="front-content">
+              <p>Sophomore</p>
+            </div>
+            <div class="content">
+              <p class="heading">Sophomore</p>
+              <p>
+                Avec ce mode, tu gagneras <strong>30 points</strong> par joueur trouvé, mais attention, tu tomberas sur des joueurs moins connus et peut-être un peu plus ancien! Fais nous voir tes meilleurs skills et montre nous que tu connais le banc des Wizards commme personne. Bon jeu et te fais pas trader pendant le break !
+              </p>
+            </div>
           </div>
         </div>
       </div>
       <% end %>
     </div>
 
-    <div class="medium-card col-sm-6 col-12 mb-4 d-flex justify-content-start">
-       <%= link_to start_medium_game_path, method: :post, class: 'text-deco' do %>
-      <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
-        <div class="card">
-          <div class="front-content">
-            <p>Sophomore</p>
-          </div>
-          <div class="content">
-            <p class="heading">Sophomore</p>
-            <p>
-              Avec ce mode, tu gagneras <strong>30 points</strong> par joueur trouvé, mais attention, tu tomberas sur des joueurs moins connus et peut-être un peu plus ancien! Fais nous voir tes meilleurs skills et montre nous que tu connais le banc des Wizards commme personne. Bon jeu et te fais pas trader pendant le break !
-            </p>
+    <div class="cards-container row">
+      <div class="hard-card col-sm-6 col-12 mb-4 d-flex justify-content-end">
+        <%= link_to start_hard_game_path, method: :post, class: 'text-deco' do %>
+        <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
+          <div class="card">
+            <div class="front-content">
+              <p>Senior</p>
+            </div>
+            <div class="content">
+              <p class="heading">Senior</p>
+              <p>
+                Avec ce mode, tu passes chez les stars de la ligue, tu gagneras <strong>50 points</strong> par joueur trouvé, mais ATTENTION, on ne rigole plus ici et si t'es pas un vrai afficionado, tu repartiras d'ici avec 0 points. Bon jeu et on espère te voir en playoffs!
+              </p>
+            </div>
           </div>
         </div>
+        <% end %>
       </div>
-    </div>
-    <% end %>
-  </div>
 
-  <div class="cards-container row">
-    <div class="hard-card col-sm-6 col-12 mb-4 d-flex justify-content-end">
-      <%= link_to start_hard_game_path, method: :post, class: 'text-deco' do %>
-      <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
-        <div class="card">
-          <div class="front-content">
-            <p>Senior</p>
-          </div>
-          <div class="content">
-            <p class="heading">Senior</p>
-            <p>
-              Avec ce mode, tu passes chez les stars de la ligue, tu gagneras <strong>50 points</strong> par joueur trouvé, mais ATTENTION, on ne rigole plus ici et si t'es pas un vrai afficionado, tu repartiras d'ici avec 0 points. Bon jeu et on espère te voir en playoffs!
-            </p>
+      <div class="legend-card col-sm-6 col-12 mb-4 d-flex justify-content-start" >
+        <%= link_to start_legend_game_path, method: :post, class: 'text-deco' do %>
+        <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
+          <div class="card">
+            <div class="front-content">
+              <p>Hall of Famers</p>
+            </div>
+            <div class="content">
+              <p class="heading">Hall of Famers</p>
+              <p>
+                Avec ce mode, tu gagneras <strong>100 points</strong> par joueur trouvé, mais n'y pense même pas si tu n'es pas un crack de la NBA et que tu ne sais pas reconnaitre Jalen Suggs par exemple. Bon jeu, c'est l'heure d'assumer ton statut!
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <% end %>
-    </div>
-
-    <div class="legend-card col-sm-6 col-12 mb-4 d-flex justify-content-start" >
-      <%= link_to start_legend_game_path, method: :post, class: 'text-deco' do %>
-      <div class="card-container" data-action="mouseenter->overlay#showOverlay mouseleave->overlay#hideOverlay">
-        <div class="card">
-          <div class="front-content">
-            <p>Hall of Famers</p>
-          </div>
-          <div class="content">
-            <p class="heading">Hall of Famers</p>
-            <p>
-              Avec ce mode, tu gagneras <strong>100 points</strong> par joueur trouvé, mais n'y pense même pas si tu n'es pas un crack de la NBA et que tu ne sais pas reconnaitre Jalen Suggs par exemple. Bon jeu, c'est l'heure d'assumer ton statut!
-            </p>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
-  <% end %>
+
+  <div class="mobile-cards-cards"><%= render 'home_mobile' %></div>
 </div>
