@@ -88,13 +88,12 @@ export default class extends Controller {
     }
   }
 
-  checkAnswer() {
+  async checkAnswer() {
     const player = this.players[this.currentQuestion];
     const userAnswer = this.playerInputTarget.value.replace(/[^a-zA-Z]/g, '').toLowerCase();
     const correctAnswer = `${player.first_name.toLowerCase()}${player.last_name.toLowerCase()}`;
 
     let pointsValue;
-
     if (this.levelValue === "easy") {
       pointsValue = 10;
     } else if (this.levelValue === "medium") {
@@ -105,14 +104,33 @@ export default class extends Controller {
       pointsValue = 100;
     }
 
-    if (userAnswer === correctAnswer) {
-      const newScore = this.score + pointsValue;
-      this.animateScoreUpdate(newScore);
-      this.score = newScore;
-      this.updateScoreVisual(true);
-    } else {
-      this.animateWrongAnswer();
-      this.updateScoreVisual(false);
+    try {
+      const response = await fetch('/test_jaro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.querySelector("[name='csrf-token']").content
+        },
+        body: JSON.stringify({
+          correct_answer: correctAnswer,
+          user_answer: userAnswer
+        })
+      });
+
+      const data = await response.json();
+      const num = data.jaro_num;
+
+      if (num >= 0.9650) {
+        const newScore = this.score + pointsValue;
+        this.animateScoreUpdate(newScore);
+        this.score = newScore;
+        this.updateScoreVisual(true);
+      } else {
+        this.animateWrongAnswer();
+        this.updateScoreVisual(false);
+      }
+    } catch (error) {
+      console.error('Error:', error);
     }
 
     const bar = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
@@ -120,6 +138,7 @@ export default class extends Controller {
     this.currentQuestion++;
     this.showNextPlayer();
   }
+
 
   updateScoreVisual(correct) {
     if (correct) {

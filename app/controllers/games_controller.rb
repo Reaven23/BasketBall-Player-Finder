@@ -55,4 +55,14 @@ class GamesController < ApplicationController
     end
   end
 
+  require 'jaro_winkler'
+
+  def test_jaro
+    correct_answer = params[:correct_answer]
+    user_answer = params[:user_answer]
+
+    num = JaroWinkler.similarity(correct_answer, user_answer)
+    render json: { jaro_num: num.round(4) }
+  end
+
 end
