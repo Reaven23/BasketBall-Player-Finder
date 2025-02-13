@@ -56,6 +56,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "cloudinary"
 gem "jaro_winkler"
+gem 'omniauth-google-oauth2'
 gem 'whenever', require: false
 
 

@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one_attached :photo
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         :omniauthable, omniauth_providers: [:google_oauth2]
   after_commit :attach_selected_avatar, on: [:create, :update]
   after_initialize :set_available_games, if: :new_record?
 
