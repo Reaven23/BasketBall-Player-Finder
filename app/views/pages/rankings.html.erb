@@ -2,8 +2,6 @@
   <%= render 'shared/navbar' %>
   <div class="container-boards">
 
-
-    <!-- Tableau avec scrollbar -->
     <div class="score-board">
       <% @users_sorted_by_score.each_with_index do |user, index|%>
         <div class="scorer <%= 'highlight' if current_user == user && user_signed_in? %>" data-search-target="scorer">
@@ -17,8 +15,7 @@
       <% end %>
 
     </div>
-
-    <!-- Barre de recherche -->
+    
     <div class="search-bar">
       <div class="">
         <input type="text" id="player-search" class="form-control" placeholder="Rechercher un joueur..." autocomplete="off" data-search-target="input" data-action="input->search#search">

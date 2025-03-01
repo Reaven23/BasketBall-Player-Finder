@@ -71,8 +71,8 @@ class GamesController < ApplicationController
 
   def check_game_availability
     if current_user.available_games <= 0
-      redirect_to root_path, alert: "Vous avez atteint votre limite de parties pour aujourd'hui."
+      flash[:no_games] = true
+      redirect_to root_path
     end
   end
-
 end
