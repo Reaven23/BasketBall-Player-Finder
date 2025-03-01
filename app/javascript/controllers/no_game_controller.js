@@ -34,12 +34,6 @@ export default class extends Controller {
 
 
     this.showShareMenu(siteUrl, text);
-    console.log("hey hey");
-
-      // Utilisation de l'API Web Share si disponible
-
-
-
   }
 
   showShareMenu(siteUrl, text) {
@@ -48,24 +42,71 @@ export default class extends Controller {
     shareMenu.classList.add("share-menu");
     shareMenu.innerHTML = `
     <div class="share-buttons">
-      <a href="https://wa.me/?text=${text} ${siteUrl}" target="_blank" class="share-btn whatsapp">
+      <a href="https://wa.me/?text=${text} ${siteUrl}" target="_blank" class="share-btn whatsapp" data-action="click->no-game#share">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
-      <a href="mailto:?subject=Regarde ce site !&body=${text} ${siteUrl}" target="_blank" class="share-btn gmail">
+      <a href="mailto:?subject=Regarde ce site !&body=${text} ${siteUrl}" target="_blank" class="share-btn gmail" data-action="click->no-game#share">
         <i class="fas fa-envelope"></i> Gmail
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=${siteUrl}" target="_blank" class="share-btn facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=${siteUrl}" target="_blank" class="share-btn facebook" data-action="click->no-game#share">
         <i class="fab fa-facebook"></i> Facebook
       </a>
-      <a href="https://www.instagram.com/?url=${siteUrl}" target="_blank" class="share-btn instagram">
+      <a href="https://www.instagram.com/?url=${siteUrl}" target="_blank" class="share-btn instagram" data-action="click->no-game#share">
         <i class="fab fa-instagram"></i> Instagram
       </a>
-      <a href="https://x.com/intent/post?text=${text}&url=${siteUrl}" target="_blank" class="share-btn x-twitter">
-        <i class="fab fa-x-twitter"></i> X 
+      <a href="https://x.com/intent/post?text=${text}&url=${siteUrl}" target="_blank" class="share-btn x-twitter" data-action="click->no-game#share">
+        <i class="fab fa-x-twitter"></i> X
       </a>
     </div>
     `;
-
-    // Supprime le menu après 8 secondes
   }
+
+  share(event) {
+    event.preventDefault();
+
+    const url = event.currentTarget.href;
+
+    // Ouvrir le partage dans une nouvelle fenêtre AVANT de faire le fetch
+    window.open(url, "_blank");
+
+    fetch(`/user/add_games_after_share`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRF-Token": document.querySelector("meta[name='csrf-token']").content,
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log("✅ Réponse JSON :", data);
+      if (data.success) {
+        this.showNotification("🎉 Merci pour le partage ! Vous avez gagné 2 parties !");
+
+        // Attendre 4 secondes avant de recharger la page
+        setTimeout(() => {
+          location.reload();
+        }, 8000);
+      } else {
+        this.showNotification("❌ Erreur : " + data.error, "error");
+      }
+    })
+    .catch(error => {
+      console.error("❌ Erreur lors de la requête :", error);
+      this.showNotification("❌ Une erreur est survenue. Essayez à nouveau.", "error");
+    });
+  }
+
+  showNotification(message, type = "success") {
+    const notification = document.createElement("div");
+    notification.classList.add("custom-notification", type);
+    notification.textContent = message;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+      notification.classList.add("fade-out");
+      setTimeout(() => notification.remove(), 500);
+    }, 8000);
+  }
+
 }

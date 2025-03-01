@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   resource :user, only: [] do
     post :update_score, on: :collection
   end
+  post "/user/add_games_after_share", to: "users#add_games_after_share"
+
 end

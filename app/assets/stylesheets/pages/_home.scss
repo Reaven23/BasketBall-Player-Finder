@@ -248,3 +248,50 @@ h2 {
     min-width: unset; /* Enlever la contrainte de taille minimum */
   }
 }
+
+.custom-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #28a745;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fade-in 0.5s ease-out;
+  text-align: center;
+  z-index: 10000;
+}
+
+/* Erreur */
+.custom-notification.error {
+  background: #dc3545;
+}
+
+/* Animation d'apparition */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Animation de disparition */
+.fade-out {
+  animation: fade-out 0.5s ease-out;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

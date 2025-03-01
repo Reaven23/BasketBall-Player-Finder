@@ -13,4 +13,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def add_games_after_share
+    if current_user
+      if current_user.respond_to?(:available_games)
+        current_user.increment!(:available_games, 2) 
+        render json: { success: true, games: current_user.available_games }
+      else
+        render json: { success: false, error: "Champ 'available_games' introuvable" }, status: 500
+      end
+    else
+      render json: { success: false, error: "Utilisateur introuvable" }, status: 400
+    end
+  end
+
 end
