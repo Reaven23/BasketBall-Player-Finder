@@ -1,6 +1,7 @@
 
-<div class="page-container-ok" data-controller="overlay">
+<div class="page-container-ok" data-controller="overlay no-game" data-no-game="<%= flash[:no_games].present? %>">
   <%= render 'shared/navbar' %>
+  <%= render 'no_game_modal' %>
   <div class="overlay d-none" data-overlay-target="overlay"></div>
   <div class="cards-cards">
     <div class="cards-container row">

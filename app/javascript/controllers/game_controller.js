@@ -12,7 +12,6 @@ export default class extends Controller {
     this.players = [];
     this.timeLimit = 14;
     this.timeRemaining = this.timeLimit;
-    console.log(this.currentQuestion);
     this.loadGame();
   }
 
