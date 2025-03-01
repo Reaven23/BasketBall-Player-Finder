@@ -65,8 +65,6 @@ export default class extends Controller {
     event.preventDefault();
 
     const url = event.currentTarget.href;
-
-    // Ouvrir le partage dans une nouvelle fenêtre AVANT de faire le fetch
     window.open(url, "_blank");
 
     fetch(`/user/add_games_after_share`, {
@@ -82,7 +80,6 @@ export default class extends Controller {
       if (data.success) {
         this.showNotification("🎉 Merci pour le partage ! Vous avez gagné 2 parties !");
 
-        // Attendre 4 secondes avant de recharger la page
         setTimeout(() => {
           location.reload();
         }, 8000);
