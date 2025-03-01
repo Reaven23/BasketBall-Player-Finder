@@ -1,5 +1,5 @@
 <!-- Modale "Plus de parties disponibles" -->
-<div id="no-games-modal" class="modal fade" tabindex="-1" aria-labelledby="noGamesModalLabel" aria-hidden="true">
+<div id="no-games-modal" class="modal fade" tabindex="-1" aria-labelledby="noGamesModalLabel" aria-hidden="true" data-controller="no-game">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -7,13 +7,20 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        <p>😢 Vous avez atteint votre limite de parties.</p>
-        <p>🔥 Gagnez 2 parties en :</p>
-        <ul>
-          <li>📢 Partageant notre site</li>
-          <li>📄 Ajoutant votre CV</li>
+        <p>😢 Vous avez atteint votre limite de parties. Elles sont limitées à deux par jour.</p>
+        <p>🔥 Cependant, vous pouvez gagner 2 parties en :</p>
+        <ul class="list-unstyled">
+          <li>📢 Partageant ce site</li>
+          <li>📄 Partageant mon CV sur LinkedIn</li>
         </ul>
-        <a href="/rewards" class="btn btn-success">🎁 Récupérer des parties</a>
+
+
+        <button data-action="click->no-game#shareSite" class="btn btn-primary fs-6">
+          📢 Partager ce site
+        </button>
+
+        <div class="share-site mt-3">
+        </div>
       </div>
     </div>
   </div>

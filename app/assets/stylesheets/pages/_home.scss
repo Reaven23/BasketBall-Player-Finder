@@ -177,3 +177,74 @@ h2 {
   color: #ffa500;
   font-weight: bold;
 }
+
+///////////////////MODAL//////////////////////////
+///
+
+.share-menu {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%; /* S'assurer que le menu ne dépasse pas la modale */
+  max-width: 400px; /* Ne pas dépasser une certaine largeur */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Permettre le passage en plusieurs lignes */
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 360px; /* S'assurer qu'on reste dans la modale */
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1 1 calc(50% - 10px); /* Prend 50% de l'espace disponible pour avoir 2 colonnes */
+  min-width: 140px; /* Empêcher que les boutons deviennent trop petits */
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+  text-align: center;
+}
+
+/* Couleurs spécifiques aux réseaux */
+.whatsapp { background: #25D366; }
+.whatsapp:hover { background: #1ebe5d; }
+
+.gmail { background: #D44638; }
+.gmail:hover { background: #b9362f; }
+
+.facebook { background: #1877F2; }
+.facebook:hover { background: #125abe; }
+
+.instagram { background: #E4405F; }
+.instagram:hover { background: #c13584; }
+
+.x-twitter { background: #000000; }
+.x-twitter:hover { background: #333333; }
+
+/* Icônes des réseaux sociaux */
+.share-btn i {
+  font-size: 18px;
+}
+
+@media (max-width: 400px) {
+  .share-buttons {
+    flex-direction: column;
+  }
+  .share-btn {
+    width: 100%; /* Les boutons prennent toute la largeur */
+    min-width: unset; /* Enlever la contrainte de taille minimum */
+  }
+}
