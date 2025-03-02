@@ -22,5 +22,5 @@ R# 🏀 Basketball Player Finder
 
 ---
 
-https://www.findtheplayer.quest/
+https://www.findtheplayer.quest
 
