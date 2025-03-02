@@ -1,39 +1,101 @@
+// .question-container {
+//   width: 60VW;
+//   margin: auto;
+//   background-color: rgba(43, 42, 42, 0.8);
+//   border-radius: 10px;
+//   color: #f9f9f9;
+// }
+
+// .name-tag {
+//   display: flex;
+//   gap: 1rem;
+
+// }
+
+// .name-tag .input {
+//   width: -webkit-fill-available;
+// }
+
+
+// .question-input input {
+//     padding: 5px;
+//     margin: 10px 0;
+//     border: 2px solid rgb(247, 167, 20);
+//     border-radius: 5px;
+//     background-color: #f9f9f9;
+//     color: #333;
+//     font-family: fantasy;
+//     height: 5vh;
+//   }
+
+
+
+.sign-up {
+  background-image: url('back-1.png');
+  background-size: cover;
+  min-height: 100vh
+}
+
 .question-container {
-  width: 60VW;
+  width: 90%;
+  max-width: 600px;
   margin: auto;
   background-color: rgba(43, 42, 42, 0.8);
   border-radius: 10px;
   color: #f9f9f9;
+  padding: 2rem;
 }
-
-.name-tag {
-  display: flex;
-  gap: 1rem;
-
-}
-
-.name-tag .input {
-  width: -webkit-fill-available;
-}
-
 
 .question-input input {
-    padding: 5px;
-    margin: 10px 0;
-    border: 2px solid rgb(247, 167, 20);
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    color: #333;
-    font-family: fantasy;
-    height: 5vh;
-  }
-
-
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid rgb(247, 167, 20);
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: fantasy;
+  height: 45px;
+  width: 100%;
+}
 
 .sign-up-container {
-  background-image: url('back-1.png');
-  background-size: cover;
-  min-height: 100vh
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
+}
+
+.password-forgotten {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .btns {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .btn {
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-center {
+    font-size: 18px;
+  }
 }
 
 

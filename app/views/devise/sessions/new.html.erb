@@ -1,4 +1,4 @@
-<div class="sign-up-container p-3">
+<div class="sign-up p-3">
   <%= render 'shared/navbar' %>
   <div class="question-container mt-5 p-5">
     <h2 class="text-center">Se connecter</h2>
@@ -20,23 +20,20 @@
       </div>
 
       <div class="btns">
-        <div class= "d-flex mb-3 align-items-end">
+        <div class="d-flex mb-3 align-items-center flex-wrap">
           <div class="form-actions me-4">
-            <%= f.button :submit, "Se connecter" %>
+            <%= f.button :submit, "Se connecter", class: "btn btn-primary" %>
           </div>
-            <% end %>
+        <% end %>
 
-          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-            <%= link_to "Créez un compte", new_registration_path(resource_name), class: "btn-small" %><br />
-          <% end %>
-
-        </div>
-
-          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-            <%= link_to "Mot de passe oublié?", new_password_path(resource_name), class:"password-forgotten" %><br />
-          <% end %>
+        <% if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <%= link_to "Créez un compte", new_registration_path(resource_name), class: "btn btn-secondary btn-small" %>
+        <% end %>
       </div>
 
-
+      <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%= link_to "Mot de passe oublié?", new_password_path(resource_name), class:"password-forgotten" %>
+      <% end %>
+    </div>
   </div>
 </div>
