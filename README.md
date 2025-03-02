@@ -22,6 +22,5 @@ R# 🏀 Basketball Player Finder
 
 ---
 
-git clone https://github.com/ton-utilisateur/basketball-player-finder.git
-cd basketball-player-finder
+https://www.findtheplayer.quest/
 
