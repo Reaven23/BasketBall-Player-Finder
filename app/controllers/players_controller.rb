@@ -1,4 +1,9 @@
 class PlayersController < ApplicationController
+  def index
+    @level = params[:level]
+    @players = @level.present? ? Player.where(level: @level) : Player.all
+  end
+
   def game_of_ten_easy
     @ten_random_easy_players = Player.where(level: 'easy').sample(10)
     render json: @ten_random_easy_players

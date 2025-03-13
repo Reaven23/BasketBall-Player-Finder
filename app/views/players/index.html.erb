@@ -1,0 +1,18 @@
+<h1>Liste des Joueurs</h1>
+
+<div class='d-flex flex-column'>
+  <a href="<%= players_path %>" class="<%= 'active' if @level.nil? %>">Toutes les niveaux</a>
+  <a href="<%= players_path(level: 'easy') %>" class="<%= 'active-d' if @level == 'easy' %>">Easy</a>
+  <a href="<%= players_path(level: 'medium') %>" class="<%= 'active-d' if @level == 'medium' %>">Medium</a>
+  <a href="<%= players_path(level: 'hard') %>" class="<%= 'active-d' if @level == 'hard' %>">Hard</a>
+  <a href="<%= players_path(level: 'legend') %>" class="<%= 'active-d' if @level == 'legend' %>">Legend</a>
+</div>
+
+<div class="players container">
+  <% @players.each do |player| %>
+    <div class="card-player border mt-2">
+      <p><%= player.first_name %> - <%= player.last_name %></p>
+      <p><%= player.level %></p>
+    </div>
+  <% end %>
+</div>
