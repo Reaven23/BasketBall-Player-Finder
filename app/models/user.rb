@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   def attach_selected_avatar
     if selected_avatar.present? && !photo.attached?
-      avatar_path = Rails.root.join("app/assets/images/avatars/#{selected_avatar}.webp")
+      avatar_path = Rails.root.join("public/avatars/#{selected_avatar}.webp")
       photo.attach(io: File.open(avatar_path), filename: "#{selected_avatar}.webp", content_type: 'image/webp')
     end
   end
