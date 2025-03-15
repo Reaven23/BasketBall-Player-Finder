@@ -2114,16 +2114,16 @@ Player.create(
 
 
 PHOTO = {
-  1 => "app/assets/images/avatars/avatar_1.webp",
-  2 => "app/assets/images/avatars/avatar_2.webp",
-  3 => "app/assets/images/avatars/avatar_3.webp",
-  4 => "app/assets/images/avatars/avatar_4.webp",
-  5 => "app/assets/images/avatars/avatar_5.webp",
-  6 => "app/assets/images/avatars/avatar_6.webp",
-  7 => "app/assets/images/avatars/avatar_7.webp",
-  8 => "app/assets/images/avatars/avatar_8.webp",
-  9 => "app/assets/images/avatars/avatar_9.webp",
-  10 => "app/assets/images/avatars/avatar_10.webp",
+  1 => "public/avatars/avatar_1.webp",
+  2 => "public/avatars/avatar_2.webp",
+  3 => "public/avatars/avatar_3.webp",
+  4 => "public/avatars/avatar_4.webp",
+  5 => "public/avatars/avatar_5.webp",
+  6 => "public/avatars/avatar_6.webp",
+  7 => "public/avatars/avatar_7.webp",
+  8 => "public/avatars/avatar_8.webp",
+  9 => "public/avatars/avatar_9.webp",
+  10 => "public/avatars/avatar_10.webp",
 }
 
 puts "10 nba easy Players created"

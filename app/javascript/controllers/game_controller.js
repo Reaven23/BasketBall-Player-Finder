@@ -145,7 +145,12 @@ export default class extends Controller {
     const bar = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
     this[bar[this.currentQuestion] + "Target"].classList.add('orange');
     this.currentQuestion++;
+    if (window.innerWidth < 768) { 
+      this.playerInputTarget.blur();
+      this.playerImageTarget.scrollIntoView({ behavior: "smooth", block: "center" }); // Recentrer sur l'image
+    }
     this.showNextPlayer();
+
   }
 
 
