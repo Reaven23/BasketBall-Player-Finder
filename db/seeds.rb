@@ -2139,6 +2139,7 @@ user1 = User.create!(
 )
 avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user1.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+user1.save
 
 
 
@@ -2151,6 +2152,7 @@ user2 = User.create(
 
 avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user2.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+user2.save
 
 user3 = User.create(
   email: "johnisthenewcadillac@gmail.com",
@@ -2160,6 +2162,7 @@ user3 = User.create(
   )
 avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user3.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+user3.save
 
 
 user4 = User.create(
@@ -2170,6 +2173,7 @@ user4 = User.create(
   )
 avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user4.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+user4.save
 
 user5 = User.create(
   email: "jumpcityjump@gmail.com",
@@ -2179,6 +2183,7 @@ user5 = User.create(
   )
 avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user5.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+user5.save
 
 user6 = User.create(
   email: "douchee@gmail.com",
@@ -2188,6 +2193,7 @@ user6 = User.create(
   )
 avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user6.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+user6.save
 
 user7 = User.create(
   email: "baag@gmail.com",
@@ -2197,6 +2203,7 @@ user7 = User.create(
   )
 avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user7.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+user7.save
 
 user8 = User.create(
   email: "nomoreidea@gmail.com",
@@ -2206,6 +2213,7 @@ user8 = User.create(
   )
 avatar_path = Rails.root.join(PHOTO[rand(1..2)])
 user8.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+user8.save
 
 user9 = User.create(
   email: "thereyougo@gmail.com",
@@ -2215,6 +2223,7 @@ user9 = User.create(
   )
 avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user9.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+user9.save
 
 user10 = User.create(
   email: "roger@gmail.com",
@@ -2224,5 +2233,7 @@ user10 = User.create(
 )
 avatar_path = Rails.root.join(PHOTO[rand(1..10)])
 user10.photo.attach(io: File.open(avatar_path), filename: "random avatar")
+user10.save
+
 
 puts "10 USERS created"
