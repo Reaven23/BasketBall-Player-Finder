@@ -20,6 +20,6 @@ class User < ApplicationRecord
   end
 
   def set_available_games
-    self.available_games ||= 5
+    self.available_games ||= 2
   end
 end
