@@ -1,0 +1,45 @@
+.dashboard-container {
+  height: 100%;
+  min-height: 100vh;
+  background-image: url('back-1.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 2em;
+}
+
+.left-div {
+  width: 35%;
+}
+
+.right-div {
+  width: 65%;
+}
+
+.profile-div {
+  height: 50vh;
+  background-color: rgba(43, 42, 42, 0.8);
+  border-radius: 10px;
+  margin-top: 1em;
+  color: white;
+}
+.image-nickname {
+  height: 65%;
+}
+
+.dash-image {
+  height: 80%;
+  width: fit-content;
+  border-radius: 50%;
+}
+
+.dash-user-nickname {
+  font-size: 2em;
+}
+
+.dash-user-points {
+  font-size: 3em;
+}

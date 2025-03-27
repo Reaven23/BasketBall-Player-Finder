@@ -101,3 +101,27 @@
     font-size: 0.8rem;
   }
 }
+
+.custom-dropdown {
+  border-radius: 0.5rem !important;
+  background-color: rgba(43, 42, 42, 0.8) !important;
+}
+
+.custom-dropdown .dropdown-item:hover {
+  background-color: rgba(43, 42, 42, 0.8) !important;
+  color: white;
+}
+
+.small-nav {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .small-nav {
+    display: block;
+  }
+
+  .big-nav{
+    display: none;
+  }
+}
