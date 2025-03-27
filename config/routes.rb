@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'rankings', to: 'pages#rankings'
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
+  get 'dashboard', to: 'pages#dashboard', as: :dashboard
 
   get 'start_easy_game', to: 'games#start_easy_game'
   get 'start_medium_game', to: 'games#start_medium_game'

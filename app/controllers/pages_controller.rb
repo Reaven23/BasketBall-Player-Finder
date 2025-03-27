@@ -14,5 +14,7 @@ class PagesController < ApplicationController
   def about
   end
 
-
+  def dashboard
+    @user = current_user
+  end
 end
