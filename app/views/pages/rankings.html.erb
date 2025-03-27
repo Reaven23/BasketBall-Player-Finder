@@ -7,7 +7,7 @@
         <div class="scorer <%= 'highlight' if current_user == user && user_signed_in? %>" data-search-target="scorer">
           <div class="user-rank"><%= index + 1 %></div>
           <% if user.photo.attached? %>
-              <%= image_tag user.photo, alt: "#{user.nickname}'s photo", class: "pl-img" %>
+              <%= cl_image_tag user.photo.key, alt: "#{user.nickname}'s photo", class: "pl-img" %>
           <% end %>
           <div class="user-nickname"><%= user.nickname %></div>
           <div class="user-points"><%= user.points.nil? ? "0 pt" : "#{user.points} pts" %> </div>
@@ -15,7 +15,7 @@
       <% end %>
 
     </div>
-    
+
     <div class="search-bar">
       <div class="">
         <input type="text" id="player-search" class="form-control" placeholder="Rechercher un joueur..." autocomplete="off" data-search-target="input" data-action="input->search#search">

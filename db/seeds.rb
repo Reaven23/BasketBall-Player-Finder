@@ -2111,7 +2111,7 @@ Player.create(
 
 
 #_____________________________ Players Seed End ____________________________
-
+require 'open-uri'
 
 PHOTO = {
   1 => "public/avatars/avatar_1.webp",
@@ -2133,107 +2133,128 @@ puts "All users deleted"
 
 user1 = User.create!(
   email: "ad.regis@gmail.com",
-  points: 4,
+  points: 40,
   password: "adrien",
   nickname: "Jordan45"
 )
-avatar_path = Rails.root.join(PHOTO[rand(1..10)])
-user1.photo.attach(io: File.open(avatar_path), filename: "random avatar")
-user1.save
+
+avatar_path = PHOTO[rand(1..10)]
+uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
+avatar_url = uploaded["secure_url"]
+user1.photo.attach(io: URI.open(avatar_url), filename: "avatar.jpg")
+user1.save!
 
 
 
 user2 = User.create(
   email: "yesitis@gmail.com",
-  points: 234,
+  points: 230,
   password: "adrien",
   nickname: "Alex78"
   )
 
-avatar_path = Rails.root.join(PHOTO[rand(1..10)])
-user2.photo.attach(io: File.open(avatar_path), filename: "random avatar")
-user2.save
+  avatar_path = PHOTO[rand(1..10)]
+  uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
+  avatar_url = uploaded["secure_url"]
+  user2.photo.attach(io: URI.open(avatar_url), filename: "avatar.jpg")
+  user2.save!
 
 user3 = User.create(
   email: "johnisthenewcadillac@gmail.com",
-  points: 2345,
+  points: 2340,
   password: "adrien",
   nickname: "JuvisyBasketClub"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..10)])
-user3.photo.attach(io: File.open(avatar_path), filename: "random avatar")
-user3.save
+  avatar_path = PHOTO[rand(1..10)]
+  uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
+  avatar_url = uploaded["secure_url"]
+  user3.photo.attach(io: URI.open(avatar_url), filename: "avatar.jpg")
+  user3.save!
 
 
 user4 = User.create(
   email: "rockit@gmail.com",
-  points: 23,
+  points: 2300,
   password: "adrien",
   nickname: "Ad.andforward"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..10)])
-user4.photo.attach(io: File.open(avatar_path), filename: "random avatar")
-user4.save
+  avatar_path = PHOTO[rand(1..10)]
+  uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
+  avatar_url = uploaded["secure_url"]
+  user4.photo.attach(io: URI.open(avatar_url), filename: "avatar.jpg")
+  user4.save!
 
 user5 = User.create(
   email: "jumpcityjump@gmail.com",
-  points: 234,
+  points: 2340,
   password: "adrien",
   nickname: "Oeil de Lynx"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..10)])
-user5.photo.attach(io: File.open(avatar_path), filename: "random avatar")
-user5.save
+  avatar_path = PHOTO[rand(1..10)]
+  uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
+  avatar_url = uploaded["secure_url"]
+  user5.photo.attach(io: URI.open(avatar_url), filename: "avatar.jpg")
+  user5.save!
 
 user6 = User.create(
   email: "douchee@gmail.com",
-  points: 543,
+  points: 540,
   password: "adrien",
   nickname: "MemesMaster77"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..10)])
-user6.photo.attach(io: File.open(avatar_path), filename: "random avatar")
-user6.save
+  avatar_path = PHOTO[rand(1..10)]
+  uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
+  avatar_url = uploaded["secure_url"]
+  user6.photo.attach(io: URI.open(avatar_url), filename: "avatar.jpg")
+  user6.save!
 
 user7 = User.create(
   email: "baag@gmail.com",
-  points: 654,
+  points: 650,
   password: "adrien",
   nickname: "PointsTrimmer"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..10)])
-user7.photo.attach(io: File.open(avatar_path), filename: "random avatar")
-user7.save
+  avatar_path = PHOTO[rand(1..10)]
+  uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
+  avatar_url = uploaded["secure_url"]
+  user7.photo.attach(io: URI.open(avatar_url), filename: "avatar.jpg")
+  user7.save!
 
 user8 = User.create(
   email: "nomoreidea@gmail.com",
-  points: 435,
+  points: 430,
   password: "adrien",
   nickname: "Kobe24"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..2)])
-user8.photo.attach(io: File.open(avatar_path), filename: "random avatar")
-user8.save
+  avatar_path = PHOTO[rand(1..10)]
+  uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
+  avatar_url = uploaded["secure_url"]
+  user8.photo.attach(io: URI.open(avatar_url), filename: "avatar.jpg")
+  user8.save!
 
 user9 = User.create(
   email: "thereyougo@gmail.com",
-  points: 7658,
+  points: 7650,
   password: "adrien",
   nickname: "tHE EDGE wALKER"
   )
-avatar_path = Rails.root.join(PHOTO[rand(1..10)])
-user9.photo.attach(io: File.open(avatar_path), filename: "random avatar")
-user9.save
+  avatar_path = PHOTO[rand(1..10)]
+  uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
+  avatar_url = uploaded["secure_url"]
+  user9.photo.attach(io: URI.open(avatar_url), filename: "avatar.jpg")
+  user9.save!
 
 user10 = User.create(
   email: "roger@gmail.com",
-  points: 435,
+  points: 40,
   password: "adrien",
   nickname: "You see me, now you don't"
 )
-avatar_path = Rails.root.join(PHOTO[rand(1..10)])
-user10.photo.attach(io: File.open(avatar_path), filename: "random avatar")
-user10.save
+avatar_path = PHOTO[rand(1..10)]
+uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
+avatar_url = uploaded["secure_url"]
+user10.photo.attach(io: URI.open(avatar_url), filename: "avatar.jpg")
+user10.save!
 
 
 puts "10 USERS created"
