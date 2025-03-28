@@ -2126,16 +2126,37 @@ PHOTO = {
   10 => "public/avatars/avatar_10.webp",
 }
 
-puts "10 nba easy Players created"
-puts "creating 10 USERS"
+puts "100 nba easy Players created"
+
+puts "destroying all Users"
 User.destroy_all
-puts "All users deleted"
+
+puts "destroying Levels"
+Level.destroy_all
+puts "creating 50 levels"
+
+starting_points = 200
+current_points = starting_points
+
+(1..50).each do |number|
+  Level.create!(
+    number: number,
+    points: current_points.to_i
+  )
+  current_points *= 1.2
+end
+
+puts "50 levels created"
+
+puts "creating 10 USERS"
+
 
 user1 = User.create!(
   email: "ad.regis@gmail.com",
   points: 40,
   password: "adrien",
-  nickname: "Jordan45"
+  nickname: "Jordan45",
+  level: Level.first
 )
 
 avatar_path = PHOTO[rand(1..10)]
@@ -2150,7 +2171,8 @@ user2 = User.create(
   email: "yesitis@gmail.com",
   points: 230,
   password: "adrien",
-  nickname: "Alex78"
+  nickname: "Alex78",
+  level: Level.first
   )
 
   avatar_path = PHOTO[rand(1..10)]
@@ -2163,7 +2185,8 @@ user3 = User.create(
   email: "johnisthenewcadillac@gmail.com",
   points: 2340,
   password: "adrien",
-  nickname: "JuvisyBasketClub"
+  nickname: "JuvisyBasketClub",
+  level: Level.first
   )
   avatar_path = PHOTO[rand(1..10)]
   uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
@@ -2176,7 +2199,8 @@ user4 = User.create(
   email: "rockit@gmail.com",
   points: 2300,
   password: "adrien",
-  nickname: "Ad.andforward"
+  nickname: "Ad.andforward",
+  level: Level.first
   )
   avatar_path = PHOTO[rand(1..10)]
   uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
@@ -2188,7 +2212,8 @@ user5 = User.create(
   email: "jumpcityjump@gmail.com",
   points: 2340,
   password: "adrien",
-  nickname: "Oeil de Lynx"
+  nickname: "Oeil de Lynx",
+  level: Level.first
   )
   avatar_path = PHOTO[rand(1..10)]
   uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
@@ -2200,7 +2225,8 @@ user6 = User.create(
   email: "douchee@gmail.com",
   points: 540,
   password: "adrien",
-  nickname: "MemesMaster77"
+  nickname: "MemesMaster77",
+  level: Level.first
   )
   avatar_path = PHOTO[rand(1..10)]
   uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
@@ -2212,7 +2238,8 @@ user7 = User.create(
   email: "baag@gmail.com",
   points: 650,
   password: "adrien",
-  nickname: "PointsTrimmer"
+  nickname: "PointsTrimmer",
+  level: Level.first
   )
   avatar_path = PHOTO[rand(1..10)]
   uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
@@ -2224,7 +2251,8 @@ user8 = User.create(
   email: "nomoreidea@gmail.com",
   points: 430,
   password: "adrien",
-  nickname: "Kobe24"
+  nickname: "Kobe24",
+  level: Level.first
   )
   avatar_path = PHOTO[rand(1..10)]
   uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
@@ -2236,7 +2264,8 @@ user9 = User.create(
   email: "thereyougo@gmail.com",
   points: 7650,
   password: "adrien",
-  nickname: "tHE EDGE wALKER"
+  nickname: "tHE EDGE wALKER",
+  level: Level.first
   )
   avatar_path = PHOTO[rand(1..10)]
   uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
@@ -2248,7 +2277,8 @@ user10 = User.create(
   email: "roger@gmail.com",
   points: 40,
   password: "adrien",
-  nickname: "You see me, now you don't"
+  nickname: "You see me, now you don't",
+  level: Level.first
 )
 avatar_path = PHOTO[rand(1..10)]
 uploaded = Cloudinary::Uploader.upload(Rails.root.join(avatar_path), folder: "avatars", public_id: "user_#{user1.id}_avatar")
