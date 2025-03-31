@@ -43,3 +43,28 @@
 .dash-user-points {
   font-size: 3em;
 }
+
+//////////////// level bar //////////////////
+
+
+.dash-level-bar {
+  width: 80%;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #F89A0E;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+
+.smaller-font {
+  font-size: medium;
+}

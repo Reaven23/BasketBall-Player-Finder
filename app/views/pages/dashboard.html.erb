@@ -7,11 +7,17 @@
           <% if @user.photo.attached? %>
             <%= cl_image_tag @user.photo.key, class: "dash-image mt-4" %>
           <% end %>
-            <div class="dash-user-nickname mt-2"><%= @user.nickname %></div>
-            <div class="dash-user-level"></div>
-        </div>
-          <div class="dash-level-bar"></div>
-          <div class="dash-user-points mt-2 mb-2"><%= @user.points > 1 ? "#{@user.points} points" : "#{@user.points} point" %></div>
+            <div class="dash-user-nickname mt-2 mb-2"><%= @user.nickname %></div>
+            <div class="dash-user-level"><%= "Niveau   #{@user.level.number}" %></div>
+          </div>
+            <div class="dash-level-bar"
+              data-controller="level-bar"
+              data-level-bar-progress-value="<%= @progression %>"
+              data-level-bar-current-points-value="<%= @user.points %>"
+              data-level-bar-next-level-points-value="<%= @next_level_points %>">
+            <div class="progress-bar" data-level-bar-target="progressBar"></div>
+          </div>
+          <div class="dash-user-points mt-2 mb-2"><%=@user.points%><span class="smaller-font"><%= @user.points > 1 ? "pts" : "pt" %></span></div>
       </div>
 
       <div class="badge-div">
