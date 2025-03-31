@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_01_27_124459) do
+ActiveRecord::Schema[7.0].define(version: 2025_03_28_164746) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,13 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_27_124459) do
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
+  create_table "levels", force: :cascade do |t|
+    t.integer "number"
+    t.integer "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "players", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -78,11 +85,14 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_27_124459) do
     t.string "first_name"
     t.string "last_name"
     t.integer "available_games"
+    t.bigint "level_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["level_id"], name: "index_users_on_level_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "games", "users"
+  add_foreign_key "users", "levels"
 end

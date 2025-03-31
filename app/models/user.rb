@@ -4,11 +4,13 @@ class User < ApplicationRecord
   attr_accessor :selected_avatar
 
   has_many :games, dependent: :destroy
+  belongs_to :level
   has_one_attached :photo
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   after_commit :attach_selected_avatar, on: [:create, :update]
   after_initialize :set_available_games, if: :new_record?
+  before_validation :assign_default_level, on: :create
 
   private
 
@@ -21,5 +23,9 @@ class User < ApplicationRecord
 
   def set_available_games
     self.available_games ||= 2
+  end
+
+  def assign_default_level
+    self.level = Level.where(number: 1)
   end
 end
