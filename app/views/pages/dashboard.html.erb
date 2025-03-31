@@ -1,6 +1,6 @@
 <div class="dashboard-container">
   <%= render 'shared/navbar' %>
-  <div class="dash-container d-flex flex-column">
+  <div class="dash-container d-flex">
     <div class="left-div d-flex flex-column">
       <div class="profile-div d-flex flex-column align-items-center justify-content-between">
         <div class="image-nickname d-flex flex-column align-items-center">
@@ -20,11 +20,11 @@
           <div class="dash-user-points mt-2 mb-2"><%=@user.points%><span class="smaller-font"><%= @user.points > 1 ? "pts" : "pt" %></span></div>
       </div>
 
-      <div class="badge-div">
+      <div class="badge-div mt-2 mb-3">
       </div>
     </div>
 
-    <div class="right-div d-flex flex-column">
+    <div class="right-div d-flex flex-column ms-3 mb-3 mt-3">
       <div class="game_stats">
       </div>
     </div>
