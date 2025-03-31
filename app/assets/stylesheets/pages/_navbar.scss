@@ -43,6 +43,10 @@
   transform: scale(1.05);
 }
 
+.nav-link:hover {
+  color: white !important;
+}
+
 /* Liens de navigation en avant-plan */
 .navbar-nav .nav-link {
   position: relative;
