@@ -79,3 +79,31 @@
 .smaller-font {
   font-size: medium;
 }
+
+/////////////////////////////filters///////////////////////////
+
+.game-stats {
+  height: 100%;
+}
+
+.filt {
+  background-color: rgba(230, 81, 81, 0.8);
+  width: 12em;
+  font-size: 15px;
+  padding: 1em 2em;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.filt:hover {
+  border-color: #ff9800;
+  box-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800, 0 0 30px #ff9800;
+  transform: scale(1.10);
+}
+
+.game-lev {
+  color: white;
+  height: 15%;
+}

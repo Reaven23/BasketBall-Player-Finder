@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @user = current_user
     new_score = @user.points ? @user.points + params[:points].to_i : params[:points].to_i
     @user.available_games -= 1
+    @user.games.last.update(score: params[:points].to_i)
 
     if @user.update(points: new_score)
       render json: { status: 'success', user: @user }
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
   def add_games_after_share
     if current_user
       if current_user.respond_to?(:available_games)
-        current_user.increment!(:available_games, 2) 
+        current_user.increment!(:available_games, 2)
         render json: { success: true, games: current_user.available_games }
       else
         render json: { success: false, error: "Champ 'available_games' introuvable" }, status: 500
