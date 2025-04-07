@@ -21,23 +21,50 @@
       </div>
 
       <div class="badge-div mt-2 mb-3">
+         <div class="score-board">
+          <% @users_sorted_by_score.each_with_index do |user, index|%>
+            <div class="scorer <%= 'highlight' if current_user == user && user_signed_in? %>" data-search-target="scorer">
+              <div class="user-rank"><%= index + 1 %></div>
+              <% if user.photo.attached? %>
+                  <%= cl_image_tag user.photo.key, alt: "#{user.nickname}'s photo", class: "pl-img" %>
+              <% end %>
+              <div class="user-nickname"><%= user.nickname %></div>
+              <div class="user-points"><%= user.points.nil? ? "0 pt" : "#{user.points} pts" %> </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
 
     <div class="right-div d-flex flex-column ms-3 mb-3 mt-3">
       <div class="game-stats d-flex flex-column">
-        <div class="game-lev d-flex justify-content-around align-items-center">
-          <div class="all-games filt">Global</div>
-          <div class="rookie filt">Rookie</div>
-          <div class="sophomore filt">Sophomore</div>
-          <div class="senior filt">Senior</div>
-          <div class="hall-of-fame filt">Hall of Fame</div>
-        </div>
-        <div class="stat-lev d-flex">
-          <div class="global-stats"></div>
-          <div class="specific-stats"></div>
+        <div class="game-lev mt-3 d-flex justify-content-around align-items-center">
+          <%= link_to dashboard_path(), class: "text-decoration-none text-white" do %>
+            <div class="all-games filt text-decoration-none">Global</div>
+          <% end %>
+          <%= link_to dashboard_path(level: "easy"), class: "text-decoration-none text-white" do %>
+            <div class="rookie filt">Rookie</div>
+           <% end %>
+          <%= link_to dashboard_path(level: "medium"), class: "text-decoration-none text-white" do %>
+            <div class="sophomore filt">Sophomore</div>
+           <% end %>
+          <%= link_to dashboard_path(level: "hard"), class: "text-decoration-none text-white" do %>
+            <div class="senior filt">Senior</div>
+           <% end %>
+          <%= link_to dashboard_path(level: "legend"), class: "text-decoration-none text-white" do %>
+            <div class="hall-of-fame filt">Hall of Fame</div>
+           <% end %>
         </div>
       </div>
+        <div class="stat-lev d-flex">
+          <div class="global-stats d-flex flex-column align-items-center justify-content-center">
+            <div class="pie-chart" style="--good-percent: <%= @good_percentage %>;"></div>
+            <div class="label mt-3">Taux de bonnes réponses: </div>
+            <div class="div-percent mt-2"><%= @good_percentage %>%</div>
+          </div>
+          <div class="specific-stats"></div>
+        </div>
+
     </div>
   </div>
 </div>

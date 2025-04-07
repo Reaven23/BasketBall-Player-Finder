@@ -16,6 +16,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    @users_sorted_by_score = User.all.order(Arel.sql('COALESCE(points, 0) DESC'))
     current_level = @user.level
     previous_level = Level.find_by(number: current_level.number - 1)
 
@@ -26,28 +27,22 @@ class PagesController < ApplicationController
     user_points_in_level = @user.points - @current_level_points
     @progression = ((user_points_in_level.to_f / total_points_needed) * 100).round(2)
 
-    @easy_games = @user.games.where(level: "easy")
-    @easy_games_played = @easy_games.count
-    @easy_points = @easy_games.pluck(:score).compact.sum
-    @possible_easy_points = @easy_games_played * 100
+    if params[:level].present?
+      @games = @user.games.where(level: params[:level])
+      @games_played = @games.count
+      @points = @games.pluck(:score).compact.sum
+      @possible_points = @games_played * 100
+      @questions = @games_played * 100
 
-    medium_games = @user.games.where(level: "medium")
-    @medium_games_played = medium_games.count
-    @medium_points = medium_games.pluck(:score).compact.sum
-    @possible_medium_points = @medium_games_played * 300
+    else
+      @games_played = @user.games.count || 0
+      @points = @user.points || 0
+      @questions = @games_played * 100
+      @possible_points = ((@user.games.where(level: "easy").count * 100) + (@user.games.where(level: "medium").count * 300) + (@user.games.where(level: "easy").count * 500) + (@user.games.where(level: "easy").count * 1000)) || 0
+    end
 
-    hard_games = @user.games.where(level: "hard")
-    @hard_games_played = hard_games.count
-    @hard_points = hard_games.pluck(:score).compact.sum
-    @possible_hard_points = @hard_games_played * 500
+    @good_percentage = (@points.to_f / @possible_points * 100).floor
+    @bad_percentage = (100 - @good_percentage)
 
-    legend_games = @user.games.where(level: "legend")
-    @legend_games_played = legend_games.count
-    @legend_points = legend_games.pluck(:score).compact.sum
-    @possible_legend_points = @legend_games_played * 1000
-
-    @games_played = (@legend_games_played + @hard_games_played + @medium_games_played + @easy_games_played ) || 0
-    @global_points = (@easy_points + @medium_points + @hard_points + @legend_points) || 0
-    @global_possible_points = (@possible_easy_points + @possible_medium_points + @possible_hard_points + @possible_legend_points) || 0
   end
 end

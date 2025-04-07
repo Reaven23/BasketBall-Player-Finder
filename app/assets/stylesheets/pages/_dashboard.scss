@@ -83,7 +83,19 @@
 /////////////////////////////filters///////////////////////////
 
 .game-stats {
+
+}
+
+.stat-lev {
   height: 100%;
+}
+
+.global-stats {
+  width: 60%;
+}
+
+.specific-stats {
+  width: 40%;
 }
 
 .filt {
@@ -105,5 +117,27 @@
 
 .game-lev {
   color: white;
-  height: 15%;
+}
+
+///////////charts//////////////////
+
+.pie-chart {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #06f112 0% calc(var(--good-percent) * 1%),
+    #ff0400 calc(var(--good-percent) * 1%) 100%
+  );
+}
+
+.label {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.div-percent {
+  font-size: 30px;
+  color: white;
 }
