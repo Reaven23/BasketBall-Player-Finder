@@ -2147,7 +2147,7 @@ current_points = starting_points
 end
 
 puts "50 levels created"
-
+p Level.first
 puts "creating 10 USERS"
 
 

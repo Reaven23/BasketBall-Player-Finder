@@ -26,6 +26,6 @@ class User < ApplicationRecord
   end
 
   def assign_default_level
-    self.level = Level.where(number: 1)
+    self.level = Level.find_by(number: 1)
   end
 end
