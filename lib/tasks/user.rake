@@ -4,7 +4,7 @@ namespace :user do
     puts "Mise à jour des niveaux utilisateurs..."
 
     User.find_each do |user|
-      correct_level = Level.where("points <= ?", user.points || 0).order(points: :desc).first
+      correct_level = Level.where("points >= ?", user.points || 0).order(points: :desc).last
       correct_level ||= Level.order(:points).first
       correct_level = Level.find_by(number: correct_level.number + 1) if user.points == correct_level.points
 
