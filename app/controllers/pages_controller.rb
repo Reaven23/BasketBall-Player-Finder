@@ -41,7 +41,7 @@ class PagesController < ApplicationController
       @possible_points = ((@user.games.where(level: "easy").count * 100) + (@user.games.where(level: "medium").count * 300) + (@user.games.where(level: "easy").count * 500) + (@user.games.where(level: "easy").count * 1000)) || 0
     end
 
-    @good_percentage = (@points.to_f / @possible_points * 100).floor
+    @possible_points > 0 ? @good_percentage = (@points.to_f / @possible_points * 100).floor : @good_percentage = 0
     @bad_percentage = (100 - @good_percentage)
 
   end
