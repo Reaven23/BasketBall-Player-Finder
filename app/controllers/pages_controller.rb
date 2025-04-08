@@ -28,7 +28,7 @@ class PagesController < ApplicationController
     @current_level_points = current_level.number == 1 ? 0 : previous_level.points
 
     total_points_needed = @next_level_points - @current_level_points
-    user_points_in_level = @user.points - @current_level_points
+    user_points_in_level = @user.points && @current_level_points ? @user.points - @current_level_points : 0
     @progression = ((user_points_in_level.to_f / total_points_needed) * 100).round(2)
 
     if params[:level].present?
@@ -38,14 +38,14 @@ class PagesController < ApplicationController
       @possible_points = @games_played * (@@chart[params[:level]] * 10)
       @questions = @games_played * 10
       @good_answers = @points / @@chart[params[:level]]
-      @bad_answers = @questions - @good_answers
+      @bad_answers = @questions && @good_answers ? @questions - @good_answers : 0
     else
       @games_played = @user.games.count || 0
       @points = @user.points || 0
       @questions = @games_played * 10
       @possible_points = ((@user.games.where(level: "easy").count * 100) + (@user.games.where(level: "medium").count * 300) + (@user.games.where(level: "easy").count * 500) + (@user.games.where(level: "easy").count * 1000)) || 0
       @good_answers = global_good_answer(@user)
-      @bad_answers = @questions - @good_answers
+      @bad_answers = @questions && @good_answers ? @questions - @good_answers : 0
     end
 
     @possible_points > 0 ? @good_percentage = (@points.to_f / @possible_points * 100).floor : @good_percentage = 0

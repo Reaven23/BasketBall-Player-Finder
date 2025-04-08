@@ -10,7 +10,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   after_commit :attach_selected_avatar, on: [:create, :update]
   after_initialize :set_available_games, if: :new_record?
-  before_validation :assign_default_level, on: :create
+  before_validation :assign_default_points_level, on: :create
 
   private
 
@@ -25,7 +25,8 @@ class User < ApplicationRecord
     self.available_games ||= 2
   end
 
-  def assign_default_level
+  def assign_default_points_level
     self.level = Level.find_by(number: 1)
+    self.points = 0
   end
 end

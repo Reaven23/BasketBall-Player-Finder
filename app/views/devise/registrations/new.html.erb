@@ -38,7 +38,7 @@
             <% (1..10).each do |i| %>
               <div class="avatar-option m-2">
                 <%= f.radio_button :selected_avatar, "avatar_#{i}", id: "avatar_#{i}" %>
-                <%= image_tag("avatars/avatar_#{i}.webp", class: "avatar-img", width: "60", height: "60", alt: "Avatar #{i}") %>
+                <%= image_tag("/avatars/avatar_#{i}.webp", class: "avatar-img", width: "60", height: "60", alt: "Avatar #{i}") %>
               </div>
             <% end %>
           </div>
