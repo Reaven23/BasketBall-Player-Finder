@@ -43,7 +43,7 @@ class PagesController < ApplicationController
       @games_played = @user.games.count || 0
       @points = @user.points || 0
       @questions = @games_played * 10
-      @possible_points = ((@user.games.where(level: "easy").count * 100) + (@user.games.where(level: "medium").count * 300) + (@user.games.where(level: "easy").count * 500) + (@user.games.where(level: "easy").count * 1000)) || 0
+      @possible_points = ((@user.games.where(level: "easy").count * 100)) + ((@user.games.where(level: "medium").count * 300)) + ((@user.games.where(level: "easy").count * 500)) + ((@user.games.where(level: "easy").count * 1000))
       @good_answers = global_good_answer(@user)
       @bad_answers = @questions && @good_answers ? @questions - @good_answers : 0
     end
