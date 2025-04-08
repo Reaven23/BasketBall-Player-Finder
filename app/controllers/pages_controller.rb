@@ -48,7 +48,7 @@ class PagesController < ApplicationController
       @bad_answers = @questions && @good_answers ? @questions - @good_answers : 0
     end
 
-    @possible_points > 0 ? @good_percentage = (@points.to_f / @possible_points * 100).floor : @good_percentage = 0
+    @possible_points > 0 ? @good_percentage = ((@good_answers.to_f / @questions.to_f) * 100).floor : @good_percentage = 0
     @bad_percentage = (100 - @good_percentage)
 
   end
