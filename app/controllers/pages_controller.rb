@@ -33,7 +33,6 @@ class PagesController < ApplicationController
       @points = @games.pluck(:score).compact.sum
       @possible_points = @games_played * 100
       @questions = @games_played * 100
-
     else
       @games_played = @user.games.count || 0
       @points = @user.points || 0

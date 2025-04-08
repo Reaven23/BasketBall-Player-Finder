@@ -8,6 +8,9 @@ class UsersController < ApplicationController
     @user.games.last.update(score: params[:points].to_i)
 
     if @user.update(points: new_score)
+      if @user.points >= @user.level.points
+         update_level(@user)
+      end
       render json: { status: 'success', user: @user }
     else
       render json: { status: 'error', message: @user.errors.full_messages.join(", ") }, status: :unprocessable_entity
@@ -24,6 +27,18 @@ class UsersController < ApplicationController
       end
     else
       render json: { success: false, error: "Utilisateur introuvable" }, status: 400
+    end
+  end
+
+  private
+
+  def update_level(user)
+    correct_level = Level.where("points >= ?", user.points).order(:number).first
+
+    if user.update(level: correct_level)
+      Rails.logger.info "level update complete"
+    else
+      Rails.logger.error "level update failed"
     end
   end
 
