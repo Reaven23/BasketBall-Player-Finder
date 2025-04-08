@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :rankings ]
-
+  @@chart = { "easy" => 10,
+              "medium" => 30,
+              "hard" => 50,
+              "legend" => 100
+            }
   def home
   end
 
@@ -31,17 +35,37 @@ class PagesController < ApplicationController
       @games = @user.games.where(level: params[:level])
       @games_played = @games.count
       @points = @games.pluck(:score).compact.sum
-      @possible_points = @games_played * 100
-      @questions = @games_played * 100
+      @possible_points = @games_played * (@@chart[params[:level]] * 10)
+      @questions = @games_played * 10
+      @good_answers = @points / @@chart[params[:level]]
+      @bad_answers = @questions - @good_answers
     else
       @games_played = @user.games.count || 0
       @points = @user.points || 0
-      @questions = @games_played * 100
+      @questions = @games_played * 10
       @possible_points = ((@user.games.where(level: "easy").count * 100) + (@user.games.where(level: "medium").count * 300) + (@user.games.where(level: "easy").count * 500) + (@user.games.where(level: "easy").count * 1000)) || 0
+      @good_answers = global_good_answer(@user)
+      @bad_answers = @questions - @good_answers
     end
 
     @possible_points > 0 ? @good_percentage = (@points.to_f / @possible_points * 100).floor : @good_percentage = 0
     @bad_percentage = (100 - @good_percentage)
 
+  end
+
+  private
+
+  def global_good_answer(user)
+    levels = ["easy", "medium", "hard", "legend"]
+    good_answers = 0
+    levels.each do |level|
+      total_score = user.games.where(level: level).pluck(:score).compact.sum
+      points_per_good_answer = @@chart[level]
+
+      if points_per_good_answer && points_per_good_answer > 0
+        good_answers += total_score / points_per_good_answer
+      end
+    end
+    good_answers
   end
 end
