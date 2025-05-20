@@ -1,14 +1,14 @@
-R# 🏀 Basketball Player Finder
+🏀 Basketball Player Finder
 
 **Basketball Player Finder** est un jeu interactif développé avec **Ruby on Rails**, qui met à l'épreuve tes connaissances des joueurs de basketball. Ce projet est une brique d'un **système plus vaste de gamification** de l'expérience des supporters dans les clubs professionnels.
 
 ---
 
-## 🚀 **Technologies utilisées**
-- **Backend** : Ruby on Rails 🛠️  
+## **Technologies utilisées**
+- **Backend** : Ruby on Rails 🛠  
 - **Frontend** : Stimulus.js, JavaScript, Bootstrap, CSS 🎨  
-- **Gestion des inputs** : Algorithme **Jaro-Winkler** pour la reconnaissance des noms des joueurs 🔍  
-- **Base de données** : PostgreSQL 🗂️  
+- **Gestion des inputs** : Algorithme **Jaro-Winkler** pour la reconnaissance des noms des joueurs   
+- **Base de données** : PostgreSQL 🗂  
 - **Déploiement** : Heroku 🌐  
 
 ---
