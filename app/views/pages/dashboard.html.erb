@@ -56,23 +56,9 @@
            <% end %>
         </div>
       </div>
-        <div class="stat-lev d-flex">
-          <div class="global-stats d-flex flex-column align-items-center justify-content-center">
-            <div class="pie-chart" style="--good-percent: <%= @good_percentage %>;"></div>
-            <div class="label mt-3">Taux de bonnes réponses: </div>
-            <div class="div-percent mt-2"><%= @good_percentage %>%</div>
-          </div>
-          <div class="specific-stats d-flex flex-column align-items-start justify-content-center">
-            <div class="questions-asked">Nombre de questions répondues:   <span class="details-color ms-2">   <%=  @questions %></span></div>
-            <div class="good-answers">Bonnes réponses:   <span class="details-color ms-2">   <%=  @good_answers %></span></div>
-            <div class="bad-answers">Mauvaises réponses:   <span class="details-color ms-2">   <%=  @bad_answers %></span> </div>
-            <div class="bad-answers">Nombre total de points possibles:   <span class="details-color ms-2">   <%=  @possible_points %></span> </div>
-            <div class="bad-answers">Nombre de points récoltés:   <span class="details-color ms-2">   <%=  @points %></span> </div>
-            <div class="divider"></div>
-            <div class="compare-myself"></div>
-          </div>
-        </div>
-
+      <%= turbo_frame_tag "stats" do%>
+        <%= render "stats" %>
+      <% end %>
     </div>
   </div>
 </div>

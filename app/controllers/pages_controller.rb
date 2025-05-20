@@ -51,6 +51,10 @@ class PagesController < ApplicationController
     @possible_points > 0 ? @good_percentage = ((@good_answers.to_f / @questions.to_f) * 100).floor : @good_percentage = 0
     @bad_percentage = (100 - @good_percentage)
 
+    respond_to do |format|
+      format.html { render :dashboard }
+      format.turbo_stream 
+    end
   end
 
   private
